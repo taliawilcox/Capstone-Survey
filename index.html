@@ -156,6 +156,9 @@
   }
   .linkbtn:hover { background: var(--accent-wash); }
 
+  .consent-row { display: flex; gap: 12px; align-items: flex-start; margin: 28px 0 6px; max-width: 720px; }
+  .consent-row input { width: 18px; height: 18px; margin-top: 3px; accent-color: var(--accent); flex: none; cursor: pointer; }
+  .consent-row label { font-size: 15.5px; cursor: pointer; }
   .nav { display: flex; align-items: center; justify-content: space-between; margin-top: 42px; gap: 16px; }
   .btn {
     font-family: var(--sans); font-weight: 600; font-size: 15.5px;
@@ -204,9 +207,13 @@
       <p>My name is Talia Wilcox, and I am a final year master's candidate at The Fletcher School at Tufts University. I am currently pursuing research on theater nuclear forces and escalation perceptions for my master's capstone project. In order to understand how policymakers and decision-makers perceive theater forces, I have designed a brief scenario and survey to gather data on what the U.S. thinks is usable when crossing the nuclear threshold.</p>
       <p>This survey should take approximately 15 minutes. Participants are first asked to read a short vignette and answer a set of questions that follow. This survey is anonymous, and questions marked with an asterisk (<span class="req">*</span>) are required. If you have any questions about my project and/or the survey, please feel free to email me: <a href="mailto:Talia.Wilcox@tufts.edu">Talia.Wilcox@tufts.edu</a>.</p>
     </div>
+    <div class="consent-row">
+      <input type="checkbox" id="consentBox">
+      <label for="consentBox">I consent to my answers being used as data in an academic paper. <span class="req">*</span></label>
+    </div>
     <div class="nav">
       <span></span>
-      <button class="btn btn-primary" data-next>Begin survey →</button>
+      <button class="btn btn-primary" data-next id="beginBtn" disabled>Begin survey →</button>
     </div>
   </section>
 
@@ -377,7 +384,7 @@
 
   <div class="foot">
     <span>Master's Capstone · The Fletcher School of Law and Diplomacy, Tufts University</span>
-    <span>Talia.Wilcox@tufts.edu · v5</span>
+    <span>Talia.Wilcox@tufts.edu · v6</span>
   </div>
 </div>
 
@@ -434,6 +441,11 @@
   });
   document.addEventListener("input", gate);
   document.addEventListener("change", gate);
+
+  /* ---------- consent gate ---------- */
+  document.getElementById("consentBox").addEventListener("change", (e) => {
+    document.getElementById("beginBtn").disabled = !e.target.checked;
+  });
 
   /* ---------- matrix choice ---------- */
   document.querySelectorAll(".mx .cell").forEach(c => c.addEventListener("click", () => {
