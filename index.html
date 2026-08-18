@@ -79,17 +79,6 @@
 
   /* ---------- matrix choice ---------- */
   .mx-wrap { overflow-x: auto; margin: 22px 0; }
-  .def-trigger { border-bottom: 1.5px dotted var(--accent-deep); cursor: help; }
-  .def-tip {
-    position: fixed; z-index: 100; max-width: 350px;
-    background: var(--paper); border: 1.5px solid var(--accent-deep); border-radius: 10px;
-    padding: 14px 16px 12px; box-shadow: 0 10px 28px rgba(31,37,55,0.22);
-    font-family: var(--sans); font-size: 12.5px; line-height: 1.5; color: var(--ink);
-    text-align: left; text-transform: none; letter-spacing: 0;
-  }
-  .def-tip h4 { margin: 0 0 8px; font-size: 13px; font-weight: 700; color: var(--accent-deep); }
-  .def-tip p { margin: 0 0 6px; }
-  .def-tip p strong { color: var(--ink); }
 
   table.mx { width: 100%; border-collapse: separate; border-spacing: 6px; min-width: 620px; }
   .mx th { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-weight: 600; padding: 4px 6px; }
@@ -104,12 +93,11 @@
   .mx button.cell.sel { background: var(--accent); border-color: var(--accent); color: #fff; }
 
   /* ---------- ranking ---------- */
-  .board { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; align-items: start; margin-top: 26px; }
+  .rank-card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px; margin-top: 26px; }
+  .board { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start; }
   @media (max-width: 820px) { .board { grid-template-columns: 1fr; } }
-  .panel-title { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px 2px; font-weight: 700; }
-  .pool { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px; min-height: 560px; }
+  .panel-title { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 0 0 12px 2px; font-weight: 700; }
   .pool-list { list-style: none; margin: 0; padding: 0; min-height: 520px; }
-  .rank-visual { background: var(--card); border: 1.5px solid var(--accent); border-radius: 12px; padding: 14px; }
   .rank-cap { text-align: center; font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 6px 0; }
   .rank-cap.top { color: var(--accent-deep); }
   .rank-cap.bottom { color: var(--muted); }
@@ -122,7 +110,7 @@
   .slot.filled { border-color: transparent; }
   .slot:not(.filled):hover { border-color: var(--accent); background: var(--accent-wash); }
   .opt {
-    background: var(--card-soft); border: 1px solid var(--line); border-radius: 9px;
+    background: var(--card-soft); border: 1px solid var(--line-strong); border-radius: 9px;
     padding: 10px 12px; margin: 0 0 9px; cursor: grab;
     display: flex; align-items: center; gap: 10px; user-select: none;
     transition: box-shadow 0.12s ease, border-color 0.12s ease;
@@ -271,15 +259,15 @@
     <div class="mx-wrap">
       <table class="mx">
         <tr><th></th><th class="colh">Launched from U.S. soil</th><th class="colh">Launched from U.S. allied soil</th><th class="colh">Launched from sea</th></tr>
-        <tr><th class="rowh"><span class="def-trigger" data-def="bhgv" tabindex="0">Nuclear — Ballistic Hypersonic Glide Vehicle</span></th>
+        <tr><th class="rowh">Nuclear — Ballistic Hypersonic Glide Vehicle</th>
           <td><button class="cell" data-opt="A">Option A</button></td>
           <td><button class="cell" data-opt="B">Option B</button></td>
           <td><button class="cell" data-opt="C">Option C</button></td></tr>
-        <tr><th class="rowh"><span class="def-trigger" data-def="cruise" tabindex="0">Nuclear — Cruise Missile</span></th>
+        <tr><th class="rowh">Nuclear — Cruise Missile</th>
           <td><button class="cell" data-opt="D">Option D</button></td>
           <td><button class="cell" data-opt="E">Option E</button></td>
           <td><button class="cell" data-opt="F">Option F</button></td></tr>
-        <tr><th class="rowh"><span class="def-trigger" data-def="conv" tabindex="0">Precision Conventional Missile</span></th>
+        <tr><th class="rowh">Precision Conventional Missile</th>
           <td><button class="cell" data-opt="G">Option G</button></td>
           <td><button class="cell" data-opt="H">Option H</button></td>
           <td><button class="cell" data-opt="I">Option I</button></td></tr>
@@ -315,19 +303,19 @@
         <tr><td>Precision Conventional Missile</td><td>Option G</td><td>Option H</td><td>Option I</td></tr>
       </table>
     </details>
-    <div class="board">
-      <section>
-        <p class="panel-title">Response options</p>
-        <div class="pool"><ul id="pool" class="pool-list"></ul></div>
-      </section>
-      <section>
-        <p class="panel-title">Your ranking</p>
-        <div class="rank-visual">
+    <div class="rank-card">
+      <div class="board">
+        <section>
+          <p class="panel-title">Response Options</p>
+          <ul id="pool" class="pool-list"></ul>
+        </section>
+        <section>
+          <p class="panel-title">Your Ranking</p>
           <div class="rank-cap top">Most Escalatory</div>
           <div class="slots" id="slots"></div>
           <div class="rank-cap bottom">Least Escalatory</div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
     <div class="nav">
       <button class="btn btn-ghost" data-prev>← Back</button>
@@ -340,11 +328,11 @@
   <section class="page" data-step="Your Reasoning">
     <p class="kicker">Your Reasoning</p>
     <div class="field">
-      <label class="q">Please explain your rankings, paying particular attention to the middle of your ordering. How did you decide where the conventional options fell relative to the nuclear options? If there is a clear line between nuclear and conventional in your ranking, what does that line represent to you — and if there is not, why not? <span class="req">*</span></label>
+      <label class="q">Please explain your ranking. How did you think about conventional versus nuclear and hypersonic versus cruise attributes? <span class="req">*</span></label>
       <textarea data-ans="ranking_explanation" data-req placeholder="Type your response here…"></textarea>
     </div>
     <div class="field">
-      <label class="q">Are there any characteristics of theater nuclear weapons that are not measured in this survey that you think should be? If so, please explain why you believe it would be important to measure. <span class="req">*</span></label>
+      <label class="q">Are there any characteristics of theater nuclear weapons that are not measured in this survey that you think should be? If so, please explain why you believe it would be important to <span style="white-space:nowrap">measure. <span class="req">*</span></span></label>
       <textarea data-ans="unmeasured_characteristics" data-req placeholder="Type your response here…"></textarea>
     </div>
     <div class="nav">
@@ -403,7 +391,7 @@
 
   <div class="foot">
     <span>Master's Capstone · The Fletcher School of Law and Diplomacy, Tufts University</span>
-    <span>Talia.Wilcox@tufts.edu · v12</span>
+    <span>Talia.Wilcox@tufts.edu · v13</span>
   </div>
   <div class="logo-row"><svg version="1.0" xmlns="http://www.w3.org/2000/svg"
   height="74" role="img" aria-label="" viewBox="0 0 2207.000000 3018.000000"
@@ -1278,67 +1266,6 @@ m-1330 -60 c9 -12 18 -53 48 -218 7 -42 13 -149 13 -246 1 -94 5 -184 10 -200
   });
   document.addEventListener("input", gate);
   document.addEventListener("change", gate);
-
-  /* ---------- delivery-vehicle definitions (hover / tap) ---------- */
-  const DEFS = {
-    bhgv: { title: "Nuclear — Ballistic Hypersonic Glide Vehicle", rows: [
-      ["Speed", "Travels faster than Mach 5 (exceeding 3,800 mph / 6,100 km/h)"],
-      ["Trajectory", "Parabolic arch out of atmosphere, highly maneuverable trajectory upon reentry"],
-      ["Altitude", "Boosted to outer space, reenters upper atmosphere, weaves and glides to target"],
-      ["Range", "1,000 to 3,000km"],
-      ["Radar Profile", "Flies below standard ballistic tracking radar but above cruise missile defenses"]
-    ]},
-    cruise: { title: "Nuclear — Cruise Missile", rows: [
-      ["Speed", "Travels faster than Mach 5 (exceeding 3,800 mph / 6,100 km/h)"],
-      ["Trajectory", "Powered, sustained, flat horizontal flight; highly maneuverable."],
-      ["Altitude", "Low to mid-atmosphere (20–30 km); never enters outer space"],
-      ["Range", "1,000 to 3,000km"],
-      ["Radar Profile", "Flies completely below standard ballistic missile defense radars"]
-    ]},
-    conv: { title: "Precision Conventional Missile", rows: [
-      ["Speed", "Mach 5 to Mach 8+ during terminal atmospheric reentry"],
-      ["Trajectory", "Parabolic arc; highly maneuverable upon reentry via terminal guidance fins."],
-      ["Altitude", "Arcs into outer space, reenters upper atmosphere, dives on target"],
-      ["Range", "1,000 to 3,000km"],
-      ["Radar Profile", "Tracked easily in space by early-warning radar"]
-    ]}
-  };
-  const tip = document.createElement("div");
-  tip.className = "def-tip";
-  tip.style.display = "none";
-  document.body.appendChild(tip);
-  let tipOwner = null;
-  function showTip(trigger) {
-    const d = DEFS[trigger.dataset.def];
-    if (!d) return;
-    tip.innerHTML = "<h4>" + d.title + "</h4>" +
-      d.rows.map(r => "<p><strong>" + r[0] + ":</strong> " + r[1] + "</p>").join("");
-    tip.style.display = "block";
-    tip.style.left = "0px"; tip.style.top = "0px";
-    const r = trigger.getBoundingClientRect();
-    const tw = tip.offsetWidth, th = tip.offsetHeight;
-    let left = Math.min(r.left, window.innerWidth - tw - 12);
-    let top = r.bottom + 8;
-    if (top + th > window.innerHeight - 8) top = Math.max(8, r.top - th - 8);
-    tip.style.left = Math.max(8, left) + "px";
-    tip.style.top = top + "px";
-    tipOwner = trigger;
-  }
-  function hideTip() { tip.style.display = "none"; tipOwner = null; }
-  document.querySelectorAll(".def-trigger").forEach(t => {
-    t.addEventListener("mouseenter", () => showTip(t));
-    t.addEventListener("mouseleave", hideTip);
-    t.addEventListener("focus", () => showTip(t));
-    t.addEventListener("blur", hideTip);
-    t.addEventListener("touchstart", (e) => {
-      e.preventDefault();
-      (tipOwner === t && tip.style.display === "block") ? hideTip() : showTip(t);
-    }, { passive: false });
-  });
-  document.addEventListener("touchstart", (e) => {
-    if (!e.target.closest(".def-trigger") && !e.target.closest(".def-tip")) hideTip();
-  }, { passive: true });
-  window.addEventListener("scroll", hideTip, true);
 
   /* ---------- consent gate ---------- */
   document.getElementById("consentBox").addEventListener("change", (e) => {
