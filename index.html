@@ -7,10 +7,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script>
-/*! Sortable 1.15.7 - MIT | git://github.com/SortableJS/Sortable.git */
-!function(t,e){"object"==typeof exports&&"undefined"!=typeof module?module.exports=e():"function"==typeof define&&define.amd?define(e):(t=t||self).Sortable=e()}(this,function(){"use strict";function o(t,e){(null==e||e>t.length)&&(e=t.length);for(var n=0,o=Array(e);n<e;n++)o[n]=t[n];return o}function i(t,e,n){return(e=function(t){t=function(t,e){if("object"!=typeof t||!t)return t;var n=t[Symbol.toPrimitive];if(void 0===n)return("string"===e?String:Number)(t);e=n.call(t,e||"default");if("object"!=typeof e)return e;throw new TypeError("@@toPrimitive must return a primitive value.")}(t,"string");return"symbol"==typeof t?t:t+""}(e))in t?Object.defineProperty(t,e,{value:n,enumerable:!0,configurable:!0,writable:!0}):t[e]=n,t}function a(){return(a=Object.assign?Object.assign.bind():function(t){for(var e=1;e<arguments.length;e++){var n,o=arguments[e];for(n in o)!{}.hasOwnProperty.call(o,n)||(t[n]=o[n])}return t}).apply(null,arguments)}function r(e,t){var n,o=Object.keys(e);return Object.getOwnPropertySymbols&&(n=Object.getOwnPropertySymbols(e),t&&(n=n.filter(function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable})),o.push.apply(o,n)),o}function I(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?r(Object(n),!0).forEach(function(t){i(e,t,n[t])}):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):r(Object(n)).forEach(function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))})}return e}function l(t,e){if(null==t)return{};var n,o=function(t,e){if(null==t)return{};var n,o={};for(n in t)if({}.hasOwnProperty.call(t,n)){if(-1!==e.indexOf(n))continue;o[n]=t[n]}return o}(t,e);if(Object.getOwnPropertySymbols)for(var i=Object.getOwnPropertySymbols(t),r=0;r<i.length;r++)n=i[r],-1===e.indexOf(n)&&{}.propertyIsEnumerable.call(t,n)&&(o[n]=t[n]);return o}function e(t){return function(t){if(Array.isArray(t))return o(t)}(t)||function(t){if("undefined"!=typeof Symbol&&null!=t[Symbol.iterator]||null!=t["@@iterator"])return Array.from(t)}(t)||function(t,e){if(t){if("string"==typeof t)return o(t,e);var n={}.toString.call(t).slice(8,-1);return"Map"===(n="Object"===n&&t.constructor?t.constructor.name:n)||"Set"===n?Array.from(t):"Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)?o(t,e):void 0}}(t)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function s(t){return(s="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t})(t)}function t(t){if("undefined"!=typeof window&&window.navigator)return!!navigator.userAgent.match(t)}var y=t(/(?:Trident.*rv[ :]?11\.|msie|iemobile|Windows Phone)/i),w=t(/Edge/i),c=t(/firefox/i),u=t(/safari/i)&&!t(/chrome/i)&&!t(/android/i),d=t(/iP(ad|od|hone)/i),n=t(/chrome/i)&&t(/android/i),h={capture:!1,passive:!1};function f(t,e,n){t.addEventListener(e,n,!y&&h)}function p(t,e,n){t.removeEventListener(e,n,!y&&h)}function g(t,e){if(e&&(">"===e[0]&&(e=e.substring(1)),t))try{if(t.matches)return t.matches(e);if(t.msMatchesSelector)return t.msMatchesSelector(e);if(t.webkitMatchesSelector)return t.webkitMatchesSelector(e)}catch(t){return}}function m(t){return t.host&&t!==document&&t.host.nodeType&&t.host!==t?t.host:t.parentNode}function P(t,e,n,o){if(t){n=n||document;do{if(null!=e&&(">"!==e[0]||t.parentNode===n)&&g(t,e)||o&&t===n)return t}while(t!==n&&(t=m(t)))}return null}var v,b=/\s+/g;function k(t,e,n){var o;t&&e&&(t.classList?t.classList[n?"add":"remove"](e):(o=(" "+t.className+" ").replace(b," ").replace(" "+e+" "," "),t.className=(o+(n?" "+e:"")).replace(b," ")))}function R(t,e,n){var o=t&&t.style;if(o){if(void 0===n)return document.defaultView&&document.defaultView.getComputedStyle?n=document.defaultView.getComputedStyle(t,""):t.currentStyle&&(n=t.currentStyle),void 0===e?n:n[e];o[e=!(e in o||-1!==e.indexOf("webkit"))?"-webkit-"+e:e]=n+("string"==typeof n?"":"px")}}function D(t,e){var n="";if("string"==typeof t)n=t;else do{var o=R(t,"transform")}while(o&&"none"!==o&&(n=o+" "+n),!e&&(t=t.parentNode));var i=window.DOMMatrix||window.WebKitCSSMatrix||window.CSSMatrix||window.MSCSSMatrix;return i&&new i(n)}function E(t,e,n){if(t){var o=t.getElementsByTagName(e),i=0,r=o.length;if(n)for(;i<r;i++)n(o[i],i);return o}return[]}function O(){var t=document.scrollingElement;return t||document.documentElement}function X(t,e,n,o,i){if(t.getBoundingClientRect||t===window){var r,a,l,s,c,u,d=t!==window&&t.parentNode&&t!==O()?(a=(r=t.getBoundingClientRect()).top,l=r.left,s=r.bottom,c=r.right,u=r.height,r.width):(l=a=0,s=window.innerHeight,c=window.innerWidth,u=window.innerHeight,window.innerWidth);if((e||n)&&t!==window&&(i=i||t.parentNode,!y))do{if(i&&i.getBoundingClientRect&&("none"!==R(i,"transform")||n&&"static"!==R(i,"position"))){var h=i.getBoundingClientRect();a-=h.top+parseInt(R(i,"border-top-width")),l-=h.left+parseInt(R(i,"border-left-width")),s=a+r.height,c=l+r.width;break}}while(i=i.parentNode);return o&&t!==window&&(o=(e=D(i||t))&&e.a,t=e&&e.d,e&&(s=(a/=t)+(u/=t),c=(l/=o)+(d/=o))),{top:a,left:l,bottom:s,right:c,width:d,height:u}}}function Y(t,e,n){for(var o=M(t,!0),i=X(t)[e];o;){var r=X(o)[n];if(!("top"===n||"left"===n?r<=i:i<=r))return o;if(o===O())break;o=M(o,!1)}return!1}function B(t,e,n,o){for(var i=0,r=0,a=t.children;r<a.length;){if("none"!==a[r].style.display&&a[r]!==Ht.ghost&&(o||a[r]!==Ht.dragged)&&P(a[r],n.draggable,t,!1)){if(i===e)return a[r];i++}r++}return null}function F(t,e){for(var n=t.lastElementChild;n&&(n===Ht.ghost||"none"===R(n,"display")||e&&!g(n,e));)n=n.previousElementSibling;return n||null}function j(t,e){var n=0;if(!t||!t.parentNode)return-1;for(;t=t.previousElementSibling;)"TEMPLATE"===t.nodeName.toUpperCase()||t===Ht.clone||e&&!g(t,e)||n++;return n}function S(t){var e=0,n=0,o=O();if(t)do{var i=D(t),r=i.a,i=i.d}while(e+=t.scrollLeft*r,n+=t.scrollTop*i,t!==o&&(t=t.parentNode));return[e,n]}function M(t,e){if(!t||!t.getBoundingClientRect)return O();var n=t,o=!1;do{if(n.clientWidth<n.scrollWidth||n.clientHeight<n.scrollHeight){var i=R(n);if(n.clientWidth<n.scrollWidth&&("auto"==i.overflowX||"scroll"==i.overflowX)||n.clientHeight<n.scrollHeight&&("auto"==i.overflowY||"scroll"==i.overflowY)){if(!n.getBoundingClientRect||n===document.body)return O();if(o||e)return n;o=!0}}}while(n=n.parentNode);return O()}function _(t,e){return Math.round(t.top)===Math.round(e.top)&&Math.round(t.left)===Math.round(e.left)&&Math.round(t.height)===Math.round(e.height)&&Math.round(t.width)===Math.round(e.width)}function C(e,n){return function(){var t;v||(1===(t=arguments).length?e.call(this,t[0]):e.apply(this,t),v=setTimeout(function(){v=void 0},n))}}function H(t,e,n){t.scrollLeft+=e,t.scrollTop+=n}function T(t){var e=window.Polymer,n=window.jQuery||window.Zepto;return e&&e.dom?e.dom(t).cloneNode(!0):n?n(t).clone(!0)[0]:t.cloneNode(!0)}function x(t,e){R(t,"position","absolute"),R(t,"top",e.top),R(t,"left",e.left),R(t,"width",e.width),R(t,"height",e.height)}function A(t){R(t,"position",""),R(t,"top",""),R(t,"left",""),R(t,"width",""),R(t,"height","")}function L(n,o,i){var r={};return Array.from(n.children).forEach(function(t){var e;P(t,o.draggable,n,!1)&&!t.animated&&t!==i&&(e=X(t),r.left=Math.min(null!==(t=r.left)&&void 0!==t?t:1/0,e.left),r.top=Math.min(null!==(t=r.top)&&void 0!==t?t:1/0,e.top),r.right=Math.max(null!==(t=r.right)&&void 0!==t?t:-1/0,e.right),r.bottom=Math.max(null!==(t=r.bottom)&&void 0!==t?t:-1/0,e.bottom))}),r.width=r.right-r.left,r.height=r.bottom-r.top,r.x=r.left,r.y=r.top,r}var K="Sortable"+(new Date).getTime();function N(){var e,o=[];return{captureAnimationState:function(){o=[],this.options.animation&&[].slice.call(this.el.children).forEach(function(t){var e,n;"none"!==R(t,"display")&&t!==Ht.ghost&&(o.push({target:t,rect:X(t)}),e=I({},o[o.length-1].rect),!t.thisAnimationDuration||(n=D(t,!0))&&(e.top-=n.f,e.left-=n.e),t.fromRect=e)})},addAnimationState:function(t){o.push(t)},removeAnimationState:function(t){o.splice(function(t,e){for(var n in t)if(t.hasOwnProperty(n))for(var o in e)if(e.hasOwnProperty(o)&&e[o]===t[n][o])return Number(n);return-1}(o,{target:t}),1)},animateAll:function(t){var c=this;if(!this.options.animation)return clearTimeout(e),void("function"==typeof t&&t());var u=!1,d=0;o.forEach(function(t){var e=0,n=t.target,o=n.fromRect,i=X(n),r=n.prevFromRect,a=n.prevToRect,l=t.rect,s=D(n,!0);s&&(i.top-=s.f,i.left-=s.e),n.toRect=i,n.thisAnimationDuration&&_(r,i)&&!_(o,i)&&(l.top-i.top)/(l.left-i.left)==(o.top-i.top)/(o.left-i.left)&&(t=l,s=r,r=a,a=c.options,e=Math.sqrt(Math.pow(s.top-t.top,2)+Math.pow(s.left-t.left,2))/Math.sqrt(Math.pow(s.top-r.top,2)+Math.pow(s.left-r.left,2))*a.animation),_(i,o)||(n.prevFromRect=o,n.prevToRect=i,e=e||c.options.animation,c.animate(n,l,i,e)),e&&(u=!0,d=Math.max(d,e),clearTimeout(n.animationResetTimer),n.animationResetTimer=setTimeout(function(){n.animationTime=0,n.prevFromRect=null,n.fromRect=null,n.prevToRect=null,n.thisAnimationDuration=null},e),n.thisAnimationDuration=e)}),clearTimeout(e),u?e=setTimeout(function(){"function"==typeof t&&t()},d):"function"==typeof t&&t(),o=[]},animate:function(t,e,n,o){var i,r;o&&(R(t,"transition",""),R(t,"transform",""),i=(r=D(this.el))&&r.a,r=r&&r.d,i=(e.left-n.left)/(i||1),r=(e.top-n.top)/(r||1),t.animatingX=!!i,t.animatingY=!!r,R(t,"transform","translate3d("+i+"px,"+r+"px,0)"),this.forRepaintDummy=t.offsetWidth,R(t,"transition","transform "+o+"ms"+(this.options.easing?" "+this.options.easing:"")),R(t,"transform","translate3d(0,0,0)"),"number"==typeof t.animated&&clearTimeout(t.animated),t.animated=setTimeout(function(){R(t,"transition",""),R(t,"transform",""),t.animated=!1,t.animatingX=!1,t.animatingY=!1},o))}}}var W=[],z={initializeByDefault:!0},G={mount:function(e){for(var t in z)!z.hasOwnProperty(t)||t in e||(e[t]=z[t]);W.forEach(function(t){if(t.pluginName===e.pluginName)throw"Sortable: Cannot mount plugin ".concat(e.pluginName," more than once")}),W.push(e)},pluginEvent:function(e,n,o){var t=this;this.eventCanceled=!1,o.cancel=function(){t.eventCanceled=!0};var i=e+"Global";W.forEach(function(t){n[t.pluginName]&&(n[t.pluginName][i]&&n[t.pluginName][i](I({sortable:n},o)),n.options[t.pluginName]&&n[t.pluginName][e]&&n[t.pluginName][e](I({sortable:n},o)))})},initializePlugins:function(n,o,i,t){for(var e in W.forEach(function(t){var e=t.pluginName;(n.options[e]||t.initializeByDefault)&&((t=new t(n,o,n.options)).sortable=n,t.options=n.options,n[e]=t,a(i,t.defaults))}),n.options){var r;n.options.hasOwnProperty(e)&&(void 0!==(r=this.modifyOption(n,e,n.options[e]))&&(n.options[e]=r))}},getEventProperties:function(e,n){var o={};return W.forEach(function(t){"function"==typeof t.eventProperties&&a(o,t.eventProperties.call(n[t.pluginName],e))}),o},modifyOption:function(e,n,o){var i;return W.forEach(function(t){e[t.pluginName]&&t.optionListeners&&"function"==typeof t.optionListeners[n]&&(i=t.optionListeners[n].call(e[t.pluginName],o))}),i}};function U(t){var e=t.sortable,n=t.rootEl,o=t.name,i=t.targetEl,r=t.cloneEl,a=t.toEl,l=t.fromEl,s=t.oldIndex,c=t.newIndex,u=t.oldDraggableIndex,d=t.newDraggableIndex,h=t.originalEvent,f=t.putSortable,p=t.extraEventProperties;if(e=e||n&&n[K]){var g,m=e.options,t="on"+o.charAt(0).toUpperCase()+o.substr(1);!window.CustomEvent||y||w?(g=document.createEvent("Event")).initEvent(o,!0,!0):g=new CustomEvent(o,{bubbles:!0,cancelable:!0}),g.to=a||n,g.from=l||n,g.item=i||n,g.clone=r,g.oldIndex=s,g.newIndex=c,g.oldDraggableIndex=u,g.newDraggableIndex=d,g.originalEvent=h,g.pullMode=f?f.lastPutMode:void 0;var v,b=I(I({},p),G.getEventProperties(o,e));for(v in b)g[v]=b[v];n&&n.dispatchEvent(g),m[t]&&m[t].call(e,g)}}function q(t,e){var n=(o=2<arguments.length&&void 0!==arguments[2]?arguments[2]:{}).evt,o=l(o,V);G.pluginEvent.bind(Ht)(t,e,I({dragEl:$,parentEl:Q,ghostEl:J,rootEl:tt,nextEl:et,lastDownEl:nt,cloneEl:ot,cloneHidden:it,dragStarted:vt,putSortable:ut,activeSortable:Ht.active,originalEvent:n,oldIndex:rt,oldDraggableIndex:lt,newIndex:at,newDraggableIndex:st,hideGhostForTarget:Yt,unhideGhostForTarget:Bt,cloneNowHidden:function(){it=!0},cloneNowShown:function(){it=!1},dispatchSortableEvent:function(t){Z({sortable:e,name:t,originalEvent:n})}},o))}var V=["evt"];function Z(t){U(I({putSortable:ut,cloneEl:ot,targetEl:$,rootEl:tt,oldIndex:rt,oldDraggableIndex:lt,newIndex:at,newDraggableIndex:st},t))}var $,Q,J,tt,et,nt,ot,it,rt,at,lt,st,ct,ut,dt,ht,ft,pt,gt,mt,vt,bt,yt,wt,Dt,Et=!1,St=!1,_t=[],Ct=!1,Tt=!1,xt=[],Ot=!1,Mt=[],At="undefined"!=typeof document,Nt=d,It=w||y?"cssFloat":"float",Pt=At&&!n&&!d&&"draggable"in document.createElement("div"),kt=function(){if(At){if(y)return!1;var t=document.createElement("x");return t.style.cssText="pointer-events:auto","auto"===t.style.pointerEvents}}(),Rt=function(t,e){var n=R(t),o=parseInt(n.width)-parseInt(n.paddingLeft)-parseInt(n.paddingRight)-parseInt(n.borderLeftWidth)-parseInt(n.borderRightWidth),i=B(t,0,e),r=B(t,1,e),a=i&&R(i),l=r&&R(r),s=a&&parseInt(a.marginLeft)+parseInt(a.marginRight)+X(i).width,t=l&&parseInt(l.marginLeft)+parseInt(l.marginRight)+X(r).width;if("flex"===n.display)return"column"===n.flexDirection||"column-reverse"===n.flexDirection?"vertical":"horizontal";if("grid"===n.display)return n.gridTemplateColumns.split(" ").length<=1?"vertical":"horizontal";if(i&&a.float&&"none"!==a.float){e="left"===a.float?"left":"right";return!r||"both"!==l.clear&&l.clear!==e?"horizontal":"vertical"}return i&&("block"===a.display||"flex"===a.display||"table"===a.display||"grid"===a.display||o<=s&&"none"===n[It]||r&&"none"===n[It]&&o<s+t)?"vertical":"horizontal"},Xt=function(t){function l(r,a){return function(t,e,n,o){var i=t.options.group.name&&e.options.group.name&&t.options.group.name===e.options.group.name;if(null==r&&(a||i))return!0;if(null==r||!1===r)return!1;if(a&&"clone"===r)return r;if("function"==typeof r)return l(r(t,e,n,o),a)(t,e,n,o);e=(a?t:e).options.group.name;return!0===r||"string"==typeof r&&r===e||r.join&&-1<r.indexOf(e)}}var e={},n=t.group;n&&"object"==s(n)||(n={name:n}),e.name=n.name,e.checkPull=l(n.pull,!0),e.checkPut=l(n.put),e.revertClone=n.revertClone,t.group=e},Yt=function(){!kt&&J&&R(J,"display","none")},Bt=function(){!kt&&J&&R(J,"display","")};At&&!n&&document.addEventListener("click",function(t){if(St)return t.preventDefault(),t.stopPropagation&&t.stopPropagation(),t.stopImmediatePropagation&&t.stopImmediatePropagation(),St=!1},!0);function Ft(t){if($){t=t.touches?t.touches[0]:t;var e=(i=t.clientX,r=t.clientY,_t.some(function(t){var e=t[K].options.emptyInsertThreshold;if(e&&!F(t)){var n=X(t),o=i>=n.left-e&&i<=n.right+e,e=r>=n.top-e&&r<=n.bottom+e;return o&&e?a=t:void 0}}),a);if(e){var n,o={};for(n in t)t.hasOwnProperty(n)&&(o[n]=t[n]);o.target=o.rootEl=e,o.preventDefault=void 0,o.stopPropagation=void 0,e[K]._onDragOver(o)}}var i,r,a}function jt(t){$&&$.parentNode[K]._isOutsideThisEl(t.target)}function Ht(t,e){if(!t||!t.nodeType||1!==t.nodeType)throw"Sortable: `el` must be an HTMLElement, not ".concat({}.toString.call(t));this.el=t,this.options=e=a({},e),t[K]=this;var n,o,i={group:null,sort:!0,disabled:!1,store:null,handle:null,draggable:/^[uo]l$/i.test(t.nodeName)?">li":">*",swapThreshold:1,invertSwap:!1,invertedSwapThreshold:null,removeCloneOnHide:!0,direction:function(){return Rt(t,this.options)},ghostClass:"sortable-ghost",chosenClass:"sortable-chosen",dragClass:"sortable-drag",ignore:"a, img",filter:null,preventOnFilter:!0,animation:0,easing:null,setData:function(t,e){t.setData("Text",e.textContent)},dropBubble:!1,dragoverBubble:!1,dataIdAttr:"data-id",delay:0,delayOnTouchOnly:!1,touchStartThreshold:(Number.parseInt?Number:window).parseInt(window.devicePixelRatio,10)||1,forceFallback:!1,fallbackClass:"sortable-fallback",fallbackOnBody:!1,fallbackTolerance:0,fallbackOffset:{x:0,y:0},supportPointer:!1!==Ht.supportPointer&&"PointerEvent"in window&&(!u||d),emptyInsertThreshold:5};for(n in G.initializePlugins(this,t,i),i)n in e||(e[n]=i[n]);for(o in Xt(e),this)"_"===o.charAt(0)&&"function"==typeof this[o]&&(this[o]=this[o].bind(this));this.nativeDraggable=!e.forceFallback&&Pt,this.nativeDraggable&&(this.options.touchStartThreshold=1),e.supportPointer?f(t,"pointerdown",this._onTapStart):(f(t,"mousedown",this._onTapStart),f(t,"touchstart",this._onTapStart)),this.nativeDraggable&&(f(t,"dragover",this),f(t,"dragenter",this)),_t.push(this.el),e.store&&e.store.get&&this.sort(e.store.get(this)||[]),a(this,N())}function Lt(t,e,n,o,i,r,a,l){var s,c,u=t[K],d=u.options.onMove;return!window.CustomEvent||y||w?(s=document.createEvent("Event")).initEvent("move",!0,!0):s=new CustomEvent("move",{bubbles:!0,cancelable:!0}),s.to=e,s.from=t,s.dragged=n,s.draggedRect=o,s.related=i||e,s.relatedRect=r||X(e),s.willInsertAfter=l,s.originalEvent=a,t.dispatchEvent(s),c=d?d.call(u,s,a):c}function Kt(t){t.draggable=!1}function Wt(){Ot=!1}function zt(t){return setTimeout(t,0)}function Gt(t){return clearTimeout(t)}Ht.prototype={constructor:Ht,_isOutsideThisEl:function(t){this.el.contains(t)||t===this.el||(bt=null)},_getDirection:function(t,e){return"function"==typeof this.options.direction?this.options.direction.call(this,t,e,$):this.options.direction},_onTapStart:function(e){if(e.cancelable){var n=this,o=this.el,t=this.options,i=t.preventOnFilter,r=e.type,a=e.touches&&e.touches[0]||e.pointerType&&"touch"===e.pointerType&&e,l=(a||e).target,s=e.target.shadowRoot&&(e.path&&e.path[0]||e.composedPath&&e.composedPath()[0])||l,c=t.filter;if(!function(t){Mt.length=0;var e=t.getElementsByTagName("input"),n=e.length;for(;n--;){var o=e[n];o.checked&&Mt.push(o)}}(o),!$&&!(/mousedown|pointerdown/.test(r)&&0!==e.button||t.disabled)&&!s.isContentEditable&&(this.nativeDraggable||!u||!l||"SELECT"!==l.tagName.toUpperCase())&&!((l=P(l,t.draggable,o,!1))&&l.animated||nt===l)){if(rt=j(l),lt=j(l,t.draggable),"function"==typeof c){if(c.call(this,e,l,this))return Z({sortable:n,rootEl:s,name:"filter",targetEl:l,toEl:o,fromEl:o}),q("filter",n,{evt:e}),void(i&&e.preventDefault())}else if(c=c&&c.split(",").some(function(t){if(t=P(s,t.trim(),o,!1))return Z({sortable:n,rootEl:t,name:"filter",targetEl:l,fromEl:o,toEl:o}),q("filter",n,{evt:e}),!0}))return void(i&&e.preventDefault());t.handle&&!P(s,t.handle,o,!1)||this._prepareDragStart(e,a,l)}}},_prepareDragStart:function(t,e,n){var o,i=this,r=i.el,a=i.options,l=r.ownerDocument;n&&!$&&n.parentNode===r&&(o=X(n),tt=r,Q=($=n).parentNode,et=$.nextSibling,nt=n,ct=a.group,dt={target:Ht.dragged=$,clientX:(e||t).clientX,clientY:(e||t).clientY},gt=dt.clientX-o.left,mt=dt.clientY-o.top,this._lastX=(e||t).clientX,this._lastY=(e||t).clientY,$.style["will-change"]="all",o=function(){q("delayEnded",i,{evt:t}),Ht.eventCanceled?i._onDrop():(i._disableDelayedDragEvents(),!c&&i.nativeDraggable&&($.draggable=!0),i._triggerDragStart(t,e),Z({sortable:i,name:"choose",originalEvent:t}),k($,a.chosenClass,!0))},a.ignore.split(",").forEach(function(t){E($,t.trim(),Kt)}),f(l,"dragover",Ft),f(l,"mousemove",Ft),f(l,"touchmove",Ft),a.supportPointer?(f(l,"pointerup",i._onDrop),this.nativeDraggable||f(l,"pointercancel",i._onDrop)):(f(l,"mouseup",i._onDrop),f(l,"touchend",i._onDrop),f(l,"touchcancel",i._onDrop)),c&&this.nativeDraggable&&(this.options.touchStartThreshold=4,$.draggable=!0),q("delayStart",this,{evt:t}),!a.delay||a.delayOnTouchOnly&&!e||this.nativeDraggable&&(w||y)?o():Ht.eventCanceled?this._onDrop():(a.supportPointer?(f(l,"pointerup",i._disableDelayedDrag),f(l,"pointercancel",i._disableDelayedDrag)):(f(l,"mouseup",i._disableDelayedDrag),f(l,"touchend",i._disableDelayedDrag),f(l,"touchcancel",i._disableDelayedDrag)),f(l,"mousemove",i._delayedDragTouchMoveHandler),f(l,"touchmove",i._delayedDragTouchMoveHandler),a.supportPointer&&f(l,"pointermove",i._delayedDragTouchMoveHandler),i._dragStartTimer=setTimeout(o,a.delay)))},_delayedDragTouchMoveHandler:function(t){t=t.touches?t.touches[0]:t;Math.max(Math.abs(t.clientX-this._lastX),Math.abs(t.clientY-this._lastY))>=Math.floor(this.options.touchStartThreshold/(this.nativeDraggable&&window.devicePixelRatio||1))&&this._disableDelayedDrag()},_disableDelayedDrag:function(){$&&Kt($),clearTimeout(this._dragStartTimer),this._disableDelayedDragEvents()},_disableDelayedDragEvents:function(){var t=this.el.ownerDocument;p(t,"mouseup",this._disableDelayedDrag),p(t,"touchend",this._disableDelayedDrag),p(t,"touchcancel",this._disableDelayedDrag),p(t,"pointerup",this._disableDelayedDrag),p(t,"pointercancel",this._disableDelayedDrag),p(t,"mousemove",this._delayedDragTouchMoveHandler),p(t,"touchmove",this._delayedDragTouchMoveHandler),p(t,"pointermove",this._delayedDragTouchMoveHandler)},_triggerDragStart:function(t,e){e=e||"touch"==t.pointerType&&t,!this.nativeDraggable||e?this.options.supportPointer?f(document,"pointermove",this._onTouchMove):f(document,e?"touchmove":"mousemove",this._onTouchMove):(f($,"dragend",this),f(tt,"dragstart",this._onDragStart));try{document.selection?zt(function(){document.selection.empty()}):window.getSelection().removeAllRanges()}catch(t){}},_dragStarted:function(t,e){var n;Et=!1,tt&&$?(q("dragStarted",this,{evt:e}),this.nativeDraggable&&f(document,"dragover",jt),n=this.options,t||k($,n.dragClass,!1),k($,n.ghostClass,!0),Ht.active=this,t&&this._appendGhost(),Z({sortable:this,name:"start",originalEvent:e})):this._nulling()},_emulateDragOver:function(){if(ht){this._lastX=ht.clientX,this._lastY=ht.clientY,Yt();for(var t=document.elementFromPoint(ht.clientX,ht.clientY),e=t;t&&t.shadowRoot&&(t=t.shadowRoot.elementFromPoint(ht.clientX,ht.clientY))!==e;)e=t;if($.parentNode[K]._isOutsideThisEl(t),e)do{if(e[K])if(e[K]._onDragOver({clientX:ht.clientX,clientY:ht.clientY,target:t,rootEl:e})&&!this.options.dragoverBubble)break}while(e=m(t=e));Bt()}},_onTouchMove:function(t){if(dt){var e=this.options,n=e.fallbackTolerance,o=e.fallbackOffset,i=t.touches?t.touches[0]:t,r=J&&D(J,!0),a=J&&r&&r.a,l=J&&r&&r.d,e=Nt&&Dt&&S(Dt),a=(i.clientX-dt.clientX+o.x)/(a||1)+(e?e[0]-xt[0]:0)/(a||1),l=(i.clientY-dt.clientY+o.y)/(l||1)+(e?e[1]-xt[1]:0)/(l||1);if(!Ht.active&&!Et){if(n&&Math.max(Math.abs(i.clientX-this._lastX),Math.abs(i.clientY-this._lastY))<n)return;this._onDragStart(t,!0)}J&&(r?(r.e+=a-(ft||0),r.f+=l-(pt||0)):r={a:1,b:0,c:0,d:1,e:a,f:l},r="matrix(".concat(r.a,",").concat(r.b,",").concat(r.c,",").concat(r.d,",").concat(r.e,",").concat(r.f,")"),R(J,"webkitTransform",r),R(J,"mozTransform",r),R(J,"msTransform",r),R(J,"transform",r),ft=a,pt=l,ht=i),t.cancelable&&t.preventDefault()}},_appendGhost:function(){if(!J){var t=this.options.fallbackOnBody?document.body:tt,e=X($,!0,Nt,!0,t),n=this.options;if(Nt){for(Dt=t;"static"===R(Dt,"position")&&"none"===R(Dt,"transform")&&Dt!==document;)Dt=Dt.parentNode;Dt!==document.body&&Dt!==document.documentElement?(Dt===document&&(Dt=O()),e.top+=Dt.scrollTop,e.left+=Dt.scrollLeft):Dt=O(),xt=S(Dt)}k(J=$.cloneNode(!0),n.ghostClass,!1),k(J,n.fallbackClass,!0),k(J,n.dragClass,!0),R(J,"transition",""),R(J,"transform",""),R(J,"box-sizing","border-box"),R(J,"margin",0),R(J,"top",e.top),R(J,"left",e.left),R(J,"width",e.width),R(J,"height",e.height),R(J,"opacity","0.8"),R(J,"position",Nt?"absolute":"fixed"),R(J,"zIndex","100000"),R(J,"pointerEvents","none"),Ht.ghost=J,t.appendChild(J),R(J,"transform-origin",gt/parseInt(J.style.width)*100+"% "+mt/parseInt(J.style.height)*100+"%")}},_onDragStart:function(t,e){var n=this,o=t.dataTransfer,i=n.options;q("dragStart",this,{evt:t}),Ht.eventCanceled?this._onDrop():(q("setupClone",this),Ht.eventCanceled||((ot=T($)).removeAttribute("id"),ot.draggable=!1,ot.style["will-change"]="",this._hideClone(),k(ot,this.options.chosenClass,!1),Ht.clone=ot),n.cloneId=zt(function(){q("clone",n),Ht.eventCanceled||(n.options.removeCloneOnHide||tt.insertBefore(ot,$),n._hideClone(),Z({sortable:n,name:"clone"}))}),e||k($,i.dragClass,!0),e?(St=!0,n._loopId=setInterval(n._emulateDragOver,50)):(p(document,"mouseup",n._onDrop),p(document,"touchend",n._onDrop),p(document,"touchcancel",n._onDrop),o&&(o.effectAllowed="move",i.setData&&i.setData.call(n,o,$)),f(document,"drop",n),R($,"transform","translateZ(0)")),Et=!0,n._dragStartId=zt(n._dragStarted.bind(n,e,t)),f(document,"selectstart",n),vt=!0,window.getSelection().removeAllRanges(),u&&R(document.body,"user-select","none"))},_onDragOver:function(n){var o,i,r,t,e,a=this.el,l=n.target,s=this.options,c=s.group,u=Ht.active,d=ct===c,h=s.sort,f=ut||u,p=this,g=!1;if(!Ot){if(void 0!==n.preventDefault&&n.cancelable&&n.preventDefault(),l=P(l,s.draggable,a,!0),O("dragOver"),Ht.eventCanceled)return g;if($.contains(n.target)||l.animated&&l.animatingX&&l.animatingY||p._ignoreWhileAnimating===l)return A(!1);if(St=!1,u&&!s.disabled&&(d?h||(i=Q!==tt):ut===this||(this.lastPutMode=ct.checkPull(this,u,$,n))&&c.checkPut(this,u,$,n))){if(r="vertical"===this._getDirection(n,l),o=X($),O("dragOverValid"),Ht.eventCanceled)return g;if(i)return Q=tt,M(),this._hideClone(),O("revert"),Ht.eventCanceled||(et?tt.insertBefore($,et):tt.appendChild($)),A(!0);var m=F(a,s.draggable);if(m&&(S=n,c=r,x=X(F((E=this).el,E.options.draggable)),E=L(E.el,E.options,J),!(c?S.clientX>E.right+10||S.clientY>x.bottom&&S.clientX>x.left:S.clientY>E.bottom+10||S.clientX>x.right&&S.clientY>x.top)||m.animated)){if(m&&(t=n,e=r,C=X(B((_=this).el,0,_.options,!0)),_=L(_.el,_.options,J),e?t.clientX<_.left-10||t.clientY<C.top&&t.clientX<C.right:t.clientY<_.top-10||t.clientY<C.bottom&&t.clientX<C.left)){var v=B(a,0,s,!0);if(v===$)return A(!1);if(D=X(l=v),!1!==Lt(tt,a,$,o,l,D,n,!1))return M(),a.insertBefore($,v),Q=a,N(),A(!0)}else if(l.parentNode===a){var b,y,w,D=X(l),E=$.parentNode!==a,S=(S=$.animated&&$.toRect||o,x=l.animated&&l.toRect||D,_=(e=r)?S.left:S.top,t=e?S.right:S.bottom,C=e?S.width:S.height,v=e?x.left:x.top,S=e?x.right:x.bottom,x=e?x.width:x.height,!(_===v||t===S||_+C/2===v+x/2)),_=r?"top":"left",C=Y(l,"top","top")||Y($,"top","top"),v=C?C.scrollTop:void 0;if(bt!==l&&(y=D[_],Ct=!1,Tt=!S&&s.invertSwap||E),0!==(b=function(t,e,n,o,i,r,a,l){var s=o?t.clientY:t.clientX,c=o?n.height:n.width,t=o?n.top:n.left,o=o?n.bottom:n.right,n=!1;if(!a)if(l&&wt<c*i){if(Ct=!Ct&&(1===yt?t+c*r/2<s:s<o-c*r/2)?!0:Ct)n=!0;else if(1===yt?s<t+wt:o-wt<s)return-yt}else if(t+c*(1-i)/2<s&&s<o-c*(1-i)/2)return function(t){return j($)<j(t)?1:-1}(e);if((n=n||a)&&(s<t+c*r/2||o-c*r/2<s))return t+c/2<s?1:-1;return 0}(n,l,D,r,S?1:s.swapThreshold,null==s.invertedSwapThreshold?s.swapThreshold:s.invertedSwapThreshold,Tt,bt===l)))for(var T=j($);(w=Q.children[T-=b])&&("none"===R(w,"display")||w===J););if(0===b||w===l)return A(!1);yt=b;var x=(bt=l).nextElementSibling,E=!1,S=Lt(tt,a,$,o,l,D,n,E=1===b);if(!1!==S)return 1!==S&&-1!==S||(E=1===S),Ot=!0,setTimeout(Wt,30),M(),E&&!x?a.appendChild($):l.parentNode.insertBefore($,E?x:l),C&&H(C,0,v-C.scrollTop),Q=$.parentNode,void 0===y||Tt||(wt=Math.abs(y-X(l)[_])),N(),A(!0)}}else{if(m===$)return A(!1);if((l=m&&a===n.target?m:l)&&(D=X(l)),!1!==Lt(tt,a,$,o,l,D,n,!!l))return M(),m&&m.nextSibling?a.insertBefore($,m.nextSibling):a.appendChild($),Q=a,N(),A(!0)}if(a.contains($))return A(!1)}return!1}function O(t,e){q(t,p,I({evt:n,isOwner:d,axis:r?"vertical":"horizontal",revert:i,dragRect:o,targetRect:D,canSort:h,fromSortable:f,target:l,completed:A,onMove:function(t,e){return Lt(tt,a,$,o,t,X(t),n,e)},changed:N},e))}function M(){O("dragOverAnimationCapture"),p.captureAnimationState(),p!==f&&f.captureAnimationState()}function A(t){return O("dragOverCompleted",{insertion:t}),t&&(d?u._hideClone():u._showClone(p),p!==f&&(k($,(ut||u).options.ghostClass,!1),k($,s.ghostClass,!0)),ut!==p&&p!==Ht.active?ut=p:p===Ht.active&&ut&&(ut=null),f===p&&(p._ignoreWhileAnimating=l),p.animateAll(function(){O("dragOverAnimationComplete"),p._ignoreWhileAnimating=null}),p!==f&&(f.animateAll(),f._ignoreWhileAnimating=null)),(l===$&&!$.animated||l===a&&!l.animated)&&(bt=null),s.dragoverBubble||n.rootEl||l===document||($.parentNode[K]._isOutsideThisEl(n.target),t||Ft(n)),!s.dragoverBubble&&n.stopPropagation&&n.stopPropagation(),g=!0}function N(){at=j($),st=j($,s.draggable),Z({sortable:p,name:"change",toEl:a,newIndex:at,newDraggableIndex:st,originalEvent:n})}},_ignoreWhileAnimating:null,_offMoveEvents:function(){p(document,"mousemove",this._onTouchMove),p(document,"touchmove",this._onTouchMove),p(document,"pointermove",this._onTouchMove),p(document,"dragover",Ft),p(document,"mousemove",Ft),p(document,"touchmove",Ft)},_offUpEvents:function(){var t=this.el.ownerDocument;p(t,"mouseup",this._onDrop),p(t,"touchend",this._onDrop),p(t,"pointerup",this._onDrop),p(t,"pointercancel",this._onDrop),p(t,"touchcancel",this._onDrop),p(document,"selectstart",this)},_onDrop:function(t){var e=this.el,n=this.options;at=j($),st=j($,n.draggable),q("drop",this,{evt:t}),Q=$&&$.parentNode,at=j($),st=j($,n.draggable),Ht.eventCanceled||(Ct=Tt=Et=!1,clearInterval(this._loopId),clearTimeout(this._dragStartTimer),Gt(this.cloneId),Gt(this._dragStartId),this.nativeDraggable&&(p(document,"drop",this),p(e,"dragstart",this._onDragStart)),this._offMoveEvents(),this._offUpEvents(),u&&R(document.body,"user-select",""),R($,"transform",""),t&&(vt&&(t.cancelable&&t.preventDefault(),n.dropBubble||t.stopPropagation()),J&&J.parentNode&&J.parentNode.removeChild(J),(tt===Q||ut&&"clone"!==ut.lastPutMode)&&ot&&ot.parentNode&&ot.parentNode.removeChild(ot),$&&(this.nativeDraggable&&p($,"dragend",this),Kt($),$.style["will-change"]="",vt&&!Et&&k($,(ut||this).options.ghostClass,!1),k($,this.options.chosenClass,!1),Z({sortable:this,name:"unchoose",toEl:Q,newIndex:null,newDraggableIndex:null,originalEvent:t}),tt!==Q?(0<=at&&(Z({rootEl:Q,name:"add",toEl:Q,fromEl:tt,originalEvent:t}),Z({sortable:this,name:"remove",toEl:Q,originalEvent:t}),Z({rootEl:Q,name:"sort",toEl:Q,fromEl:tt,originalEvent:t}),Z({sortable:this,name:"sort",toEl:Q,originalEvent:t})),ut&&ut.save()):at!==rt&&0<=at&&(Z({sortable:this,name:"update",toEl:Q,originalEvent:t}),Z({sortable:this,name:"sort",toEl:Q,originalEvent:t})),Ht.active&&(null!=at&&-1!==at||(at=rt,st=lt),Z({sortable:this,name:"end",toEl:Q,originalEvent:t}),this.save())))),this._nulling()},_nulling:function(){q("nulling",this),tt=$=Q=J=et=ot=nt=it=dt=ht=vt=at=st=rt=lt=bt=yt=ut=ct=Ht.dragged=Ht.ghost=Ht.clone=Ht.active=null;var e=this.el;Mt.forEach(function(t){e.contains(t)&&(t.checked=!0)}),Mt.length=ft=pt=0},handleEvent:function(t){switch(t.type){case"drop":case"dragend":this._onDrop(t);break;case"dragenter":case"dragover":$&&(this._onDragOver(t),function(t){t.dataTransfer&&(t.dataTransfer.dropEffect="move");t.cancelable&&t.preventDefault()}(t));break;case"selectstart":t.preventDefault()}},toArray:function(){for(var t,e=[],n=this.el.children,o=0,i=n.length,r=this.options;o<i;o++)P(t=n[o],r.draggable,this.el,!1)&&e.push(t.getAttribute(r.dataIdAttr)||function(t){var e=t.tagName+t.className+t.src+t.href+t.textContent,n=e.length,o=0;for(;n--;)o+=e.charCodeAt(n);return o.toString(36)}(t));return e},sort:function(t,e){var n={},o=this.el;this.toArray().forEach(function(t,e){e=o.children[e];P(e,this.options.draggable,o,!1)&&(n[t]=e)},this),e&&this.captureAnimationState(),t.forEach(function(t){n[t]&&(o.removeChild(n[t]),o.appendChild(n[t]))}),e&&this.animateAll()},save:function(){var t=this.options.store;t&&t.set&&t.set(this)},closest:function(t,e){return P(t,e||this.options.draggable,this.el,!1)},option:function(t,e){var n=this.options;if(void 0===e)return n[t];var o=G.modifyOption(this,t,e);n[t]=void 0!==o?o:e,"group"===t&&Xt(n)},destroy:function(){q("destroy",this);var t=this.el;t[K]=null,p(t,"mousedown",this._onTapStart),p(t,"touchstart",this._onTapStart),p(t,"pointerdown",this._onTapStart),this.nativeDraggable&&(p(t,"dragover",this),p(t,"dragenter",this)),Array.prototype.forEach.call(t.querySelectorAll("[draggable]"),function(t){t.removeAttribute("draggable")}),this._onDrop(),this._disableDelayedDragEvents(),_t.splice(_t.indexOf(this.el),1),this.el=t=null},_hideClone:function(){it||(q("hideClone",this),Ht.eventCanceled||(R(ot,"display","none"),this.options.removeCloneOnHide&&ot.parentNode&&ot.parentNode.removeChild(ot),it=!0))},_showClone:function(t){"clone"===t.lastPutMode?it&&(q("showClone",this),Ht.eventCanceled||($.parentNode!=tt||this.options.group.revertClone?et?tt.insertBefore(ot,et):tt.appendChild(ot):tt.insertBefore(ot,$),this.options.group.revertClone&&this.animate($,ot),R(ot,"display",""),it=!1)):this._hideClone()}},At&&f(document,"touchmove",function(t){(Ht.active||Et)&&t.cancelable&&t.preventDefault()}),Ht.utils={on:f,off:p,css:R,find:E,is:function(t,e){return!!P(t,e,t,!1)},extend:function(t,e){if(t&&e)for(var n in e)e.hasOwnProperty(n)&&(t[n]=e[n]);return t},throttle:C,closest:P,toggleClass:k,clone:T,index:j,nextTick:zt,cancelNextTick:Gt,detectDirection:Rt,getChild:B,expando:K},Ht.get=function(t){return t[K]},Ht.mount=function(){for(var t=arguments.length,e=new Array(t),n=0;n<t;n++)e[n]=arguments[n];(e=e[0].constructor===Array?e[0]:e).forEach(function(t){if(!t.prototype||!t.prototype.constructor)throw"Sortable: Mounted plugin must be a constructor function, not ".concat({}.toString.call(t));t.utils&&(Ht.utils=I(I({},Ht.utils),t.utils)),G.mount(t)})},Ht.create=function(t,e){return new Ht(t,e)};var Ut,qt,Vt,Zt,$t,Qt,Jt=[],te=!(Ht.version="1.15.7");function ee(){Jt.forEach(function(t){clearInterval(t.pid)}),Jt=[]}function ne(){clearInterval(Qt)}var oe,ie=C(function(n,t,e,o){if(t.scroll){var i,r=(n.touches?n.touches[0]:n).clientX,a=(n.touches?n.touches[0]:n).clientY,l=t.scrollSensitivity,s=t.scrollSpeed,c=O(),u=!1;qt!==e&&(qt=e,ee(),Ut=t.scroll,i=t.scrollFn,!0===Ut&&(Ut=M(e,!0)));var d=0,h=Ut;do{var f=h,p=X(f),g=p.top,m=p.bottom,v=p.left,b=p.right,y=p.width,w=p.height,D=void 0,E=void 0,S=f.scrollWidth,_=f.scrollHeight,C=R(f),T=f.scrollLeft,p=f.scrollTop,E=f===c?(D=y<S&&("auto"===C.overflowX||"scroll"===C.overflowX||"visible"===C.overflowX),w<_&&("auto"===C.overflowY||"scroll"===C.overflowY||"visible"===C.overflowY)):(D=y<S&&("auto"===C.overflowX||"scroll"===C.overflowX),w<_&&("auto"===C.overflowY||"scroll"===C.overflowY)),T=D&&(Math.abs(b-r)<=l&&T+y<S)-(Math.abs(v-r)<=l&&!!T),p=E&&(Math.abs(m-a)<=l&&p+w<_)-(Math.abs(g-a)<=l&&!!p);if(!Jt[d])for(var x=0;x<=d;x++)Jt[x]||(Jt[x]={});Jt[d].vx==T&&Jt[d].vy==p&&Jt[d].el===f||(Jt[d].el=f,Jt[d].vx=T,Jt[d].vy=p,clearInterval(Jt[d].pid),0==T&&0==p||(u=!0,Jt[d].pid=setInterval(function(){o&&0===this.layer&&Ht.active._onTouchMove($t);var t=Jt[this.layer].vy?Jt[this.layer].vy*s:0,e=Jt[this.layer].vx?Jt[this.layer].vx*s:0;"function"==typeof i&&"continue"!==i.call(Ht.dragged.parentNode[K],e,t,n,$t,Jt[this.layer].el)||H(Jt[this.layer].el,e,t)}.bind({layer:d}),24))),d++}while(t.bubbleScroll&&h!==c&&(h=M(h,!1)));te=u}},30),n=function(t){var e=t.originalEvent,n=t.putSortable,o=t.dragEl,i=t.activeSortable,r=t.dispatchSortableEvent,a=t.hideGhostForTarget,t=t.unhideGhostForTarget;e&&(i=n||i,a(),e=e.changedTouches&&e.changedTouches.length?e.changedTouches[0]:e,e=document.elementFromPoint(e.clientX,e.clientY),t(),i&&!i.el.contains(e)&&(r("spill"),this.onSpill({dragEl:o,putSortable:n})))};function re(){}function ae(){}re.prototype={startIndex:null,dragStart:function(t){t=t.oldDraggableIndex;this.startIndex=t},onSpill:function(t){var e=t.dragEl,n=t.putSortable;this.sortable.captureAnimationState(),n&&n.captureAnimationState();t=B(this.sortable.el,this.startIndex,this.options);t?this.sortable.el.insertBefore(e,t):this.sortable.el.appendChild(e),this.sortable.animateAll(),n&&n.animateAll()},drop:n},a(re,{pluginName:"revertOnSpill"}),ae.prototype={onSpill:function(t){var e=t.dragEl,t=t.putSortable||this.sortable;t.captureAnimationState(),e.parentNode&&e.parentNode.removeChild(e),t.animateAll()},drop:n},a(ae,{pluginName:"removeOnSpill"});var le,se,ce,ue,de,he=[],fe=[],pe=!1,ge=!1,me=!1;function ve(n,o){fe.forEach(function(t,e){e=o.children[t.sortableIndex+(n?Number(e):0)];e?o.insertBefore(t,e):o.appendChild(t)})}function be(){he.forEach(function(t){t!==ce&&t.parentNode&&t.parentNode.removeChild(t)})}return Ht.mount(new function(){function t(){for(var t in this.defaults={scroll:!0,forceAutoScrollFallback:!1,scrollSensitivity:30,scrollSpeed:10,bubbleScroll:!0},this)"_"===t.charAt(0)&&"function"==typeof this[t]&&(this[t]=this[t].bind(this))}return t.prototype={dragStarted:function(t){t=t.originalEvent;this.sortable.nativeDraggable?f(document,"dragover",this._handleAutoScroll):this.options.supportPointer?f(document,"pointermove",this._handleFallbackAutoScroll):t.touches?f(document,"touchmove",this._handleFallbackAutoScroll):f(document,"mousemove",this._handleFallbackAutoScroll)},dragOverCompleted:function(t){t=t.originalEvent;this.options.dragOverBubble||t.rootEl||this._handleAutoScroll(t)},drop:function(){this.sortable.nativeDraggable?p(document,"dragover",this._handleAutoScroll):(p(document,"pointermove",this._handleFallbackAutoScroll),p(document,"touchmove",this._handleFallbackAutoScroll),p(document,"mousemove",this._handleFallbackAutoScroll)),ne(),ee(),clearTimeout(v),v=void 0},nulling:function(){$t=qt=Ut=te=Qt=Vt=Zt=null,Jt.length=0},_handleFallbackAutoScroll:function(t){this._handleAutoScroll(t,!0)},_handleAutoScroll:function(e,n){var o,i=this,r=(e.touches?e.touches[0]:e).clientX,a=(e.touches?e.touches[0]:e).clientY,t=document.elementFromPoint(r,a);$t=e,n||this.options.forceAutoScrollFallback||w||y||u?(ie(e,this.options,t,n),o=M(t,!0),!te||Qt&&r===Vt&&a===Zt||(Qt&&ne(),Qt=setInterval(function(){var t=M(document.elementFromPoint(r,a),!0);t!==o&&(o=t,ee()),ie(e,i.options,t,n)},10),Vt=r,Zt=a)):this.options.bubbleScroll&&M(t,!0)!==O()?ie(e,this.options,M(t,!1),!1):ee()}},a(t,{pluginName:"scroll",initializeByDefault:!0})}),Ht.mount(ae,re),Ht.mount(new function(){function t(){this.defaults={swapClass:"sortable-swap-highlight"}}return t.prototype={dragStart:function(t){t=t.dragEl;oe=t},dragOverValid:function(t){var e=t.completed,n=t.target,o=t.onMove,i=t.activeSortable,r=t.changed,a=t.cancel;i.options.swap&&(t=this.sortable.el,i=this.options,n&&n!==t&&(t=oe,oe=!1!==o(n)?(k(n,i.swapClass,!0),n):null,t&&t!==oe&&k(t,i.swapClass,!1)),r(),e(!0),a())},drop:function(t){var e,n,o=t.activeSortable,i=t.putSortable,r=t.dragEl,a=i||this.sortable,l=this.options;oe&&k(oe,l.swapClass,!1),oe&&(l.swap||i&&i.options.swap)&&r!==oe&&(a.captureAnimationState(),a!==o&&o.captureAnimationState(),n=oe,t=(e=r).parentNode,l=n.parentNode,t&&l&&!t.isEqualNode(n)&&!l.isEqualNode(e)&&(i=j(e),r=j(n),t.isEqualNode(l)&&i<r&&r++,t.insertBefore(n,t.children[i]),l.insertBefore(e,l.children[r])),a.animateAll(),a!==o&&o.animateAll())},nulling:function(){oe=null}},a(t,{pluginName:"swap",eventProperties:function(){return{swapItem:oe}}})}),Ht.mount(new function(){function t(o){for(var t in this)"_"===t.charAt(0)&&"function"==typeof this[t]&&(this[t]=this[t].bind(this));o.options.avoidImplicitDeselect||(o.options.supportPointer?f(document,"pointerup",this._deselectMultiDrag):(f(document,"mouseup",this._deselectMultiDrag),f(document,"touchend",this._deselectMultiDrag))),f(document,"keydown",this._checkKeyDown),f(document,"keyup",this._checkKeyUp),this.defaults={selectedClass:"sortable-selected",multiDragKey:null,avoidImplicitDeselect:!1,setData:function(t,e){var n="";he.length&&se===o?he.forEach(function(t,e){n+=(e?", ":"")+t.textContent}):n=e.textContent,t.setData("Text",n)}}}return t.prototype={multiDragKeyDown:!1,isMultiDrag:!1,delayStartGlobal:function(t){t=t.dragEl;ce=t},delayEnded:function(){this.isMultiDrag=~he.indexOf(ce)},setupClone:function(t){var e=t.sortable,t=t.cancel;if(this.isMultiDrag){for(var n=0;n<he.length;n++)fe.push(T(he[n])),fe[n].sortableIndex=he[n].sortableIndex,fe[n].draggable=!1,fe[n].style["will-change"]="",k(fe[n],this.options.selectedClass,!1),he[n]===ce&&k(fe[n],this.options.chosenClass,!1);e._hideClone(),t()}},clone:function(t){var e=t.sortable,n=t.rootEl,o=t.dispatchSortableEvent,t=t.cancel;this.isMultiDrag&&(this.options.removeCloneOnHide||he.length&&se===e&&(ve(!0,n),o("clone"),t()))},showClone:function(t){var e=t.cloneNowShown,n=t.rootEl,t=t.cancel;this.isMultiDrag&&(ve(!1,n),fe.forEach(function(t){R(t,"display","")}),e(),de=!1,t())},hideClone:function(t){var e=this,n=(t.sortable,t.cloneNowHidden),t=t.cancel;this.isMultiDrag&&(fe.forEach(function(t){R(t,"display","none"),e.options.removeCloneOnHide&&t.parentNode&&t.parentNode.removeChild(t)}),n(),de=!0,t())},dragStartGlobal:function(t){t.sortable;!this.isMultiDrag&&se&&se.multiDrag._deselectMultiDrag(),he.forEach(function(t){t.sortableIndex=j(t)}),he=he.sort(function(t,e){return t.sortableIndex-e.sortableIndex}),me=!0},dragStarted:function(t){var e,n=this,t=t.sortable;this.isMultiDrag&&(this.options.sort&&(t.captureAnimationState(),this.options.animation&&(he.forEach(function(t){t!==ce&&R(t,"position","absolute")}),e=X(ce,!1,!0,!0),he.forEach(function(t){t!==ce&&x(t,e)}),pe=ge=!0)),t.animateAll(function(){pe=ge=!1,n.options.animation&&he.forEach(function(t){A(t)}),n.options.sort&&be()}))},dragOver:function(t){var e=t.target,n=t.completed,t=t.cancel;ge&&~he.indexOf(e)&&(n(!1),t())},revert:function(t){var n,o,e=t.fromSortable,i=t.rootEl,r=t.sortable,a=t.dragRect;1<he.length&&(he.forEach(function(t){r.addAnimationState({target:t,rect:ge?X(t):a}),A(t),t.fromRect=a,e.removeAnimationState(t)}),ge=!1,n=!this.options.removeCloneOnHide,o=i,he.forEach(function(t,e){e=o.children[t.sortableIndex+(n?Number(e):0)];e?o.insertBefore(t,e):o.appendChild(t)}))},dragOverCompleted:function(t){var e,n=t.sortable,o=t.isOwner,i=t.insertion,r=t.activeSortable,a=t.parentEl,l=t.putSortable,t=this.options;i&&(o&&r._hideClone(),pe=!1,t.animation&&1<he.length&&(ge||!o&&!r.options.sort&&!l)&&(e=X(ce,!1,!0,!0),he.forEach(function(t){t!==ce&&(x(t,e),a.appendChild(t))}),ge=!0),o||(ge||be(),1<he.length?(o=de,r._showClone(n),r.options.animation&&!de&&o&&fe.forEach(function(t){r.addAnimationState({target:t,rect:ue}),t.fromRect=ue,t.thisAnimationDuration=null})):r._showClone(n)))},dragOverAnimationCapture:function(t){var e=t.dragRect,n=t.isOwner,t=t.activeSortable;he.forEach(function(t){t.thisAnimationDuration=null}),t.options.animation&&!n&&t.multiDrag.isMultiDrag&&(ue=a({},e),e=D(ce,!0),ue.top-=e.f,ue.left-=e.e)},dragOverAnimationComplete:function(){ge&&(ge=!1,be())},drop:function(t){var o,i,r,a,n,e,l,s=t.originalEvent,c=t.rootEl,u=t.parentEl,d=t.sortable,h=t.dispatchSortableEvent,f=t.oldIndex,t=t.putSortable,p=t||this.sortable;s&&(o=this.options,i=u.children,me||(o.multiDragKey&&!this.multiDragKeyDown&&this._deselectMultiDrag(),k(ce,o.selectedClass,!~he.indexOf(ce)),~he.indexOf(ce)?(he.splice(he.indexOf(ce),1),le=null,U({sortable:d,rootEl:c,name:"deselect",targetEl:ce,originalEvent:s})):(he.push(ce),U({sortable:d,rootEl:c,name:"select",targetEl:ce,originalEvent:s}),s.shiftKey&&le&&d.el.contains(le)?(r=j(le),a=j(ce),~r&&~a&&r!==a&&function(){for(var e,t=r<a?(e=r,a):(e=a,r+1),n=o.filter;e<t;e++)~he.indexOf(i[e])||P(i[e],o.draggable,u,!1)&&(n&&("function"==typeof n?n.call(d,s,i[e],d):n.split(",").some(function(t){return P(i[e],t.trim(),u,!1)}))||(k(i[e],o.selectedClass,!0),he.push(i[e]),U({sortable:d,rootEl:c,name:"select",targetEl:i[e],originalEvent:s})))}()):le=ce,se=p)),me&&this.isMultiDrag&&(ge=!1,(u[K].options.sort||u!==c)&&1<he.length&&(n=X(ce),e=j(ce,":not(."+this.options.selectedClass+")"),!pe&&o.animation&&(ce.thisAnimationDuration=null),p.captureAnimationState(),pe||(o.animation&&(ce.fromRect=n,he.forEach(function(t){var e;t.thisAnimationDuration=null,t!==ce&&(e=ge?X(t):n,t.fromRect=e,p.addAnimationState({target:t,rect:e}))})),be(),he.forEach(function(t){i[e]?u.insertBefore(t,i[e]):u.appendChild(t),e++}),f===j(ce)&&(l=!1,he.forEach(function(t){t.sortableIndex!==j(t)&&(l=!0)}),l&&(h("update"),h("sort")))),he.forEach(function(t){A(t)}),p.animateAll()),se=p),(c===u||t&&"clone"!==t.lastPutMode)&&fe.forEach(function(t){t.parentNode&&t.parentNode.removeChild(t)}))},nullingGlobal:function(){this.isMultiDrag=me=!1,fe.length=0},destroyGlobal:function(){this._deselectMultiDrag(),p(document,"pointerup",this._deselectMultiDrag),p(document,"mouseup",this._deselectMultiDrag),p(document,"touchend",this._deselectMultiDrag),p(document,"keydown",this._checkKeyDown),p(document,"keyup",this._checkKeyUp)},_deselectMultiDrag:function(t){if(!(void 0!==me&&me||se!==this.sortable||t&&P(t.target,this.options.draggable,this.sortable.el,!1)||t&&0!==t.button))for(;he.length;){var e=he[0];k(e,this.options.selectedClass,!1),he.shift(),U({sortable:this.sortable,rootEl:this.sortable.el,name:"deselect",targetEl:e,originalEvent:t})}},_checkKeyDown:function(t){t.key===this.options.multiDragKey&&(this.multiDragKeyDown=!0)},_checkKeyUp:function(t){t.key===this.options.multiDragKey&&(this.multiDragKeyDown=!1)}},a(t,{pluginName:"multiDrag",utils:{select:function(t){var e=t.parentNode[K];e&&e.options.multiDrag&&!~he.indexOf(t)&&(se&&se!==e&&(se.multiDrag._deselectMultiDrag(),se=e),k(t,e.options.selectedClass,!0),he.push(t))},deselect:function(t){var e=t.parentNode[K],n=he.indexOf(t);e&&e.options.multiDrag&&~n&&(k(t,e.options.selectedClass,!1),he.splice(n,1))}},eventProperties:function(){var n=this,o=[],i=[];return he.forEach(function(t){var e;o.push({multiDragElement:t,index:t.sortableIndex}),e=ge&&t!==ce?-1:ge?j(t,":not(."+n.options.selectedClass+")"):j(t),i.push({multiDragElement:t,index:e})}),{items:e(he),clones:[].concat(fe),oldIndicies:o,newIndicies:i}},optionListeners:{multiDragKey:function(t){return"ctrl"===(t=t.toLowerCase())?t="Control":1<t.length&&(t=t.charAt(0).toUpperCase()+t.substr(1)),t}}})}),Ht});
-</script>
 <style>
   :root {
     --accent: #C2491D;
@@ -42,10 +38,6 @@
   .steplabel { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
   .progress-track { height: 3px; background: var(--line); }
   .progress-fill { height: 100%; width: 0%; background: var(--accent); transition: width 0.35s ease; }
-  .demo-banner {
-    background: #FFF6E3; border-bottom: 1px solid #EADFA6;
-    font-size: 12.5px; color: #6F5C1B; text-align: center; padding: 7px 16px;
-  }
   .wrap { max-width: 880px; margin: 0 auto; padding: 46px 24px 110px; }
   .page { display: none; animation: fade 0.35s ease; }
   .page.active { display: block; }
@@ -77,67 +69,92 @@
     margin: 4px 0 22px;
   }
 
-  /* ---------- matrix choice ---------- */
-  .mx-wrap { overflow-x: auto; margin: 22px 0; }
+  /* ---------- weapon profile cards ---------- */
+  .prof {
+    background: var(--card); border: 1.5px solid var(--line-strong); border-radius: 10px;
+    padding: 14px 18px; font-family: var(--sans);
+  }
+  .prof-title {
+    font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent-deep); font-weight: 700; margin: 2px 0 8px; text-align: center;
+  }
+  .prof-row {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
+    padding: 8px 0; border-bottom: 1px dashed var(--line); font-size: 14.5px; line-height: 1.4;
+  }
+  .prof-row:last-child { border-bottom: none; }
+  .prof-row .pk { color: var(--muted); flex: none; }
+  .prof-row .pv { font-weight: 600; text-align: right; }
+  .strike-card {
+    border: 2px solid var(--accent); background: var(--accent-wash); border-radius: 12px;
+    padding: 16px 20px; margin: 18px 0; max-width: 560px; font-family: var(--sans);
+    font-size: 15px; line-height: 1.5;
+  }
+  .strike-card .prof-row { border-bottom: 1px dashed #E4C4B4; }
+  .scenario-card .strike-card { margin: 14px 0 4px; }
 
-  table.mx { width: 100%; border-collapse: separate; border-spacing: 6px; min-width: 620px; }
-  .mx th { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-weight: 600; padding: 4px 6px; }
-  .mx th.colh { text-align: center; }
-  .mx th.rowh { text-align: left; font-size: 13.5px; text-transform: none; letter-spacing: 0; color: var(--ink); width: 30%; padding-right: 10px; }
-  .mx button.cell {
-    width: 100%; padding: 15px 8px; border: 1.5px solid var(--line-strong); border-radius: 8px;
-    background: var(--card); font-family: var(--sans); font-weight: 600; font-size: 14px;
-    color: var(--muted); cursor: pointer; transition: all 0.12s ease;
+  /* ---------- rating scale ---------- */
+  .scale { display: flex; gap: 8px; margin: 12px 0 4px; flex-wrap: wrap; max-width: 720px; }
+  .scale-btn {
+    flex: 1; min-width: 104px; border: 1.5px solid var(--line-strong); background: var(--card);
+    border-radius: 8px; padding: 10px 6px 9px; cursor: pointer; font-family: var(--sans);
+    display: flex; flex-direction: column; gap: 3px; align-items: center;
+    transition: all 0.12s ease;
   }
-  .mx button.cell:hover { border-color: var(--accent); color: var(--accent-deep); }
-  .mx button.cell.sel { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .scale-btn .num { font-weight: 700; font-size: 17px; color: var(--ink); }
+  .scale-btn .lab { font-size: 11.5px; color: var(--muted); line-height: 1.3; text-align: center; }
+  .scale-btn:hover { border-color: var(--accent); }
+  .scale-btn.sel { background: var(--accent); border-color: var(--accent); }
+  .scale-btn.sel .num, .scale-btn.sel .lab { color: #fff; }
 
-  /* ---------- ranking ---------- */
-  .rank-card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px; margin-top: 26px; }
-  .board { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start; }
-  @media (max-width: 820px) { .board { grid-template-columns: 1fr; } }
-  .panel-title { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 0 0 12px 2px; font-weight: 700; }
-  .pool-list { list-style: none; margin: 0; padding: 0; min-height: 520px; }
-  .rank-cap { text-align: center; font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 6px 0; }
-  .rank-cap.top { color: var(--accent-deep); }
-  .rank-cap.bottom { color: var(--muted); }
-  .slots { display: flex; flex-direction: column; gap: 8px; margin: 10px 0; }
-  .slot {
-    min-height: 56px; border: 2px dashed var(--line-strong); border-radius: 9px;
-    display: flex; flex-direction: column; justify-content: center;
-    transition: border-color 0.15s ease, background 0.15s ease;
+  /* ---------- paired choice (conjoint round) ---------- */
+  .duel { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin: 22px 0; align-items: start; }
+  @media (max-width: 760px) { .duel { grid-template-columns: 1fr; } }
+  .duel-col {
+    background: var(--card-soft); border: 1px solid var(--line); border-radius: 12px;
+    padding: 18px 18px 20px;
   }
-  .slot.filled { border-color: transparent; }
-  .slot:not(.filled):hover { border-color: var(--accent); background: var(--accent-wash); }
-  .opt {
-    background: var(--card-soft); border: 1px solid var(--line-strong); border-radius: 9px;
-    padding: 10px 12px; margin: 0 0 9px; cursor: grab;
-    display: flex; align-items: center; gap: 10px; user-select: none;
-    transition: box-shadow 0.12s ease, border-color 0.12s ease;
+  .opt-head {
+    text-align: center; font-family: var(--serif); font-weight: 700; font-size: 18px;
+    margin: 0 0 12px;
   }
-  .slot .opt { margin: 0; background: var(--accent-wash); border-color: var(--line-strong); min-height: 52px; }
-  .opt:active { cursor: grabbing; }
-  .opt:hover { border-color: var(--accent); box-shadow: 0 2px 8px rgba(31,37,55,0.10); }
-  .opt .grip { color: #B3BDD0; font-size: 15px; flex: none; }
-  .opt .txt { flex: 1; font-size: 13.5px; line-height: 1.35; }
-  .opt .txt .letter { font-weight: 700; color: var(--accent); margin-right: 6px; }
-  .opt button {
-    flex: none; border: 1px solid var(--line-strong); background: #fff; border-radius: 6px;
-    width: 26px; height: 26px; font-size: 13px; color: var(--muted); cursor: pointer; line-height: 1;
+  .q-mini { font-weight: 600; font-size: 14px; margin: 16px 0 2px; line-height: 1.4; }
+  .duel .scale { gap: 5px; }
+  .duel .scale-btn { min-width: 0; padding: 8px 2px 7px; }
+  .duel .scale-btn .lab { font-size: 10px; }
+  .pickbtn {
+    width: 100%; margin-top: 16px; padding: 12px 10px;
+    border: 1.5px solid var(--accent); border-radius: 8px; background: var(--card);
+    color: var(--accent-deep); font-family: var(--sans); font-weight: 600; font-size: 14.5px;
+    cursor: pointer; transition: all 0.12s ease;
   }
-  .opt button:hover { border-color: var(--accent); color: var(--accent); }
-  .opt .ctrls { display: flex; gap: 4px; }
-  .sortable-ghost { opacity: 0.4; }
-  .sortable-drag { box-shadow: 0 6px 18px rgba(31,37,55,0.2); }
+  .pickbtn:hover { background: var(--accent-wash); }
+  .pickbtn.sel { background: var(--accent); color: #fff; }
+  .pickbtn.sel::before { content: "✓ "; }
+  .roundfade { animation: fade 0.3s ease; }
+  .pairnav { display: flex; justify-content: space-between; align-items: center; margin: 6px 0 0; }
+  .prevpair {
+    background: none; border: none; color: var(--muted); font-family: var(--sans);
+    font-size: 13.5px; cursor: pointer; padding: 4px 2px; text-decoration: underline;
+  }
+  .prevpair:hover { color: var(--ink); }
+
+  /* part & glide: old pair splits to the sides, new pair glides in from the edges */
+  @keyframes exitL  { to { opacity: 0; transform: translateX(-70px); } }
+  @keyframes exitR  { to { opacity: 0; transform: translateX(70px); } }
+  @keyframes enterL { from { opacity: 0; transform: translateX(-90px) rotate(-1.6deg); } to { opacity: 1; transform: none; } }
+  @keyframes enterR { from { opacity: 0; transform: translateX(90px) rotate(1.6deg); } to { opacity: 1; transform: none; } }
+  .duel-col.exit-l  { animation: exitL 0.28s ease forwards; pointer-events: none; }
+  .duel-col.exit-r  { animation: exitR 0.28s ease forwards; pointer-events: none; }
+  .duel-col.enter-l { animation: enterL 0.38s cubic-bezier(0.22, 0.9, 0.35, 1) both; }
+  .duel-col.enter-r { animation: enterR 0.38s cubic-bezier(0.22, 0.9, 0.35, 1) both; }
+  @keyframes fadeout { to { opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) {
+    .duel-col.exit-l, .duel-col.exit-r  { animation: fadeout 0.2s ease forwards; }
+    .duel-col.enter-l, .duel-col.enter-r { animation: fade 0.3s ease both; }
+  }
+
   .hidden { display: none !important; }
-
-  details.opt-table { background: var(--card); border: 1px solid var(--line); border-radius: 10px; margin: 20px 0; overflow: hidden; }
-  details.opt-table summary { cursor: pointer; padding: 13px 18px; font-weight: 600; font-size: 14px; color: var(--accent-deep); list-style: none; user-select: none; }
-  details.opt-table summary::before { content: "▸ "; }
-  details.opt-table[open] summary::before { content: "▾ "; }
-  .ot-grid { width: 100%; border-collapse: collapse; font-size: 13.5px; }
-  .ot-grid th, .ot-grid td { border-top: 1px solid var(--line); padding: 10px 14px; text-align: left; }
-  .ot-grid th { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
 
   /* ---------- fields ---------- */
   .field { margin: 26px 0; max-width: 720px; }
@@ -172,10 +189,6 @@
   .nav .hintline { font-size: 13px; color: var(--muted); }
   .fin-mark { font-family: var(--serif); font-size: 60px; color: var(--accent); line-height: 1; margin-bottom: 14px; }
   .thanks { font-family: var(--serif); font-size: 24px; line-height: 1.4; max-width: 640px; }
-  pre.dump {
-    background: var(--card); border: 1px solid var(--line); border-radius: 10px;
-    padding: 16px 18px; font-size: 12.5px; overflow-x: auto; color: #454E66;
-  }
   .logo-row { display: flex; justify-content: center; margin-top: 26px; }
   .logo-row svg { height: 74px; }
   .foot {
@@ -200,14 +213,14 @@
   <!-- honeypot: invisible to humans, bots tend to fill it -->
   <input type="text" id="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;height:0;width:0;border:0;padding:0;">
 
-  <!-- ================ PAGE 0 · INTRODUCTION ================ -->
-  <section class="page active" data-step="Introduction">
+  <!-- ================ INTRODUCTION ================ -->
+  <section class="page active" id="intro" data-step="Introduction">
     <p class="kicker">Master's Capstone Research</p>
     <h1>Theater Nuclear Weapons and Perceptions of Escalation</h1>
     <div class="bodytext">
       <p><strong>Introduction</strong></p>
-      <p>My name is Talia Wilcox, and I am a final year master's candidate at The Fletcher School at Tufts University. I am currently pursuing research on theater nuclear forces and escalation perceptions for my master's capstone project. In order to understand how policymakers and decision-makers perceive theater forces, I have designed a brief scenario and survey to gather data on what the U.S. thinks is usable when crossing the nuclear threshold.</p>
-      <p>This survey should take approximately 15 minutes. Participants are first asked to read a short vignette and answer a set of questions that follow. This survey is anonymous, and questions marked with an asterisk (<span class="req">*</span>) are required. If you have any questions about my project and/or the survey, please feel free to email me: <a href="mailto:Talia.Wilcox@tufts.edu">Talia.Wilcox@tufts.edu</a>.</p>
+      <p>My name is Talia Wilcox, and I am a final year master's candidate at The Fletcher School at Tufts University. I am currently pursuing research on theater nuclear forces and escalation perceptions for my master's capstone project. In order to understand how policymakers and decision-makers perceive theater forces, I have designed a brief scenario and survey to gather data on what the US thinks is usable when crossing the nuclear threshold.</p>
+      <p>This survey should take approximately 15 minutes. Participants are first asked to read a short vignette and answer a set of questions that follow. This survey is anonymous, and questions marked with an asterisk (<span class="req">*</span>) are required. The attributes of the strike options in this survey are randomly generated, so the combinations you see are not predictions or assessments of real-world forces. If you have any questions about my project and/or the survey, please feel free to email me: <a href="mailto:Talia.Wilcox@tufts.edu">Talia.Wilcox@tufts.edu</a>.</p>
     </div>
     <div class="consent-row">
       <input type="checkbox" id="consentBox">
@@ -219,26 +232,28 @@
     </div>
   </section>
 
-  <!-- ================ PAGE 1 · SCENARIO ================ -->
-  <section class="page" data-step="The Scenario">
+  <!-- ================ SCENARIO ================ -->
+  <section class="page" id="scenario" data-step="The Scenario">
     <p class="kicker">The Scenario</p>
     <div class="bodytext">
       <p><strong>Instructions</strong><br>
-      Below, you will see a brief three paragraph vignette. Following the vignette, there are four content questions.</p>
+      Below, you will see a brief three paragraph vignette. Following the vignette, there are several content questions.</p>
       <p><strong>Objective</strong>: Deter further Russian escalation while preserving the credibility of US commitments to NATO.</p>
       <p><strong>BLUF</strong>: Kaliningrad border crisis requires US response. NATO does not want to escalate to full scale nuclear war.</p>
     </div>
     <div class="scenario-card">
       <div class="center-title">Kaliningrad Crisis Scenario</div>
       <p><strong>Background and Assumptions</strong></p>
-      <p>Russia is concerned about the security of Kaliningrad. To offset the exclave's vulnerability, Russia has deployed both offensive and defensive assets to Kaliningrad. Notable offensive capabilities include long-range strike systems like the Iskander missile and hypersonic weapons like the Kinzhal missile. Kaliningrad also hosts anti-ship missiles and strong air defense systems. Western intelligence suggests Kaliningrad also hosts a buried nuclear weapons storage facility.</p>
-      <p>In response, Lithuania, NATO's leader in defense spending at 5% of GDP, has heavily fortified its border and hosts the alliance's growing forward deployments. EU sanctions further complicate Russia's access to Kaliningrad. Sanctions prevent transit of specific goods, and security and border closures restrict shipments, leaving Kaliningrad dependent on its port access to make up for shortages. Russian officials increasingly portray NATO's fortification of the Gap and its expanding forward presence as preparation to blockade – or seize – Kaliningrad outright.</p>
-      <p>Russia's continuous nuclear signaling and recent nuclear sharing arrangement with Belarus—framed as a defensive answer to NATO encirclement—further complicate NATO's calculus, leaving Lithuania surrounded on multiple sides. Russia's November 2024 doctrine update lowered its nuclear threshold. Because Kaliningrad is sovereign Russian territory, Russia regards any blockade of or attack on the exclave as a threat to Russian territorial integrity. Russia also remains unconstrained by arms control treaties or nuclear norms. Putin revoked ratification of the CTBT in 2023, Russian officials declared the Novaya Zemlya test site "fully ready" in 2024, and in 2026 the New START treaty expired with no successor. The US, meanwhile, remains fully committed to NATO's Article 5 and extended deterrence, with nuclear weapons still forward-deployed in Europe under NATO nuclear sharing—deployments Russia has long cited as evidence of NATO's hostile intent.</p>
+      <p>Kaliningrad is sovereign Russian territory, and Russia regards any blockade of or attack on the exclave as a threat to Russian territorial integrity. To offset the territory's vulnerability, Russia has deployed both offensive and defensive assets to Kaliningrad. Notable offensive capabilities include short-range ballistic missiles and hypersonic weapons. Kaliningrad also hosts anti-ship missiles and strong air defense systems.</p>
+      <p>In response, Lithuania, NATO's leader in defense spending at 5% of GDP, has heavily fortified its border and hosts the alliance's growing forward deployments. EU sanctions further complicate Russia's access to Kaliningrad, leaving the exclave dependent on its port to make up for shortages in specific goods and border closures. Russian officials increasingly perceive these maneuvers as precursors to a NATO blockade or outright seizure of Kaliningrad.</p>
+      <p>Russia's continuous nuclear signaling and recent nuclear sharing arrangement with Belarus further alters NATO's calculus, leaving Lithuania surrounded on multiple sides. Russia's November 2024 doctrine update lowered its nuclear threshold, and Russia remains unconstrained by arms control treaties or nuclear norms. The US, meanwhile, remains fully committed to NATO's Article 5 and extended deterrence, with nuclear weapons still forward-deployed in Europe under NATO nuclear sharing—deployments Russia has long cited as evidence of NATO's hostile intent.</p>
       <p><strong>Scenario</strong></p>
       <ul>
-        <li>The year is 2035. A border war has broken out between Russia and Poland at Kaliningrad's southern border. Russian leadership believes this is the first step in NATO aggression against Kaliningrad, and officials are paranoid about being cut off from the exclave.</li>
-        <li>The conflict escalates, and Russia detonates a low yield nuclear weapon launched from the Leningrad Military District at Redzikowo Missile Defense Base – the permanent US Navy installation 160km from Kaliningrad's southern border.</li>
-        <li>NATO does not want to escalate to a full scale war with Russia. You are a US official on the National Security Council, and the Joint Chiefs have given you nine response options, both nuclear and conventional. Your task is to advise the President. Please choose from the following response options and answer the following questions.</li>
+        <li>The year is 2035. A border war has broken out between Russia and Poland at Kaliningrad's southern border. Russian leadership believes this is an act of NATO aggression to cut off access to the territory.</li>
+        <li>The conflict escalates, and Russia detonates a low yield nuclear weapon at Redzikowo Missile Defense Base – the permanent US Navy installation 160km from Kaliningrad's southern border. Western intelligence has confirmed the attributes of Russia's strike:
+          <div class="strike-card" id="rusProfileScenario"></div>
+        </li>
+        <li>NATO does not want to escalate to a full scale war with Russia. <strong>You are a US official on the National Security Council</strong>, and the Joint Chiefs have prepared a set of response options, both nuclear and conventional. <strong>Your task is to advise the President</strong>. Please answer the following questions.</li>
       </ul>
     </div>
     <div class="nav">
@@ -247,36 +262,55 @@
     </div>
   </section>
 
-  <!-- ================ PAGE 2 · RESPONSE OPTIONS ================ -->
-  <section class="page" data-step="Response Options">
-    <p class="kicker">Response Options</p>
+  <!-- ================ RUSSIA CONJOINT (5 rounds cycle on one page) ================ -->
+  <section class="page" id="ru-conjoint" data-step="Russian Strike Options">
+    <p class="kicker">Russian Strike Options · Round <span id="ruRoundNum">1</span> of 5</p>
     <div class="bodytext">
       <p><strong>Response Options</strong><br>
-      The US President has asked you to choose the <u>least escalatory option</u> and explain why. All nine options strike the same target: Leningrad Military District in northwest Russia. All nuclear options carry the same low-yield warhead, comparable in yield to the weapon Russia detonated at Redzikowo; the conventional option produces equivalent destructive effects, and casualties are constant across all options. All options are equally available, reliable, and expected to destroy the target.</p>
-      <p><em>Please only choose <u>one option</u> from the entire matrix that you consider the <u>least escalatory</u> option. This question is required.</em> <span class="req">*</span></p>
+      Imagine the United States and Russia are at war. The US President has asked you to evaluate how escalatory you would perceive two possible Russian strike options to be. Both options strike the same target: the unit that launched the first strike. All nuclear options carry the same low-yield warhead, comparable in yield to the weapon Russia detonated at Redzikowo; conventional options produce equivalent destructive effects, and casualties are constant across all options. All options are equally available, reliable, and expected to destroy the target.</p>
+      <p><em>Please rate each option, then select the option you consider less escalatory. Once you make your pick, the next pair of options appears — there are five rounds in total. All parts of this question are required.</em> <span class="req">*</span></p>
+    </div>
+    <div class="duel" id="ruDuelWrap"></div>
+    <div class="pairnav">
+      <button type="button" class="prevpair hidden" id="ruPrevPair">← Previous pair</button>
+      <span class="hintline" id="ruRoundHint"></span>
+      <button type="button" class="prevpair hidden" id="ruNextPair">Next pair →</button>
+    </div>
+    <input type="hidden" id="gate-ru-conjoint" data-req>
+    <div class="nav">
+      <button class="btn btn-ghost" id="ruConjointBack">← Back</button>
+      <button class="btn btn-primary hidden" id="ruConjointNext" disabled>Continue →</button>
+    </div>
+  </section>
+
+  <!-- ================ BLOCK U · CONJOINT (5 rounds cycle on one page) ================ -->
+  <section class="page" id="conjoint" data-step="US Strike Options">
+    <p class="kicker">US Strike Options · Round <span id="roundNum">1</span> of 5</p>
+    <div class="bodytext">
+      <p><strong>Response Options</strong><br>
+      The US President has asked you to identify the <u>less escalatory</u> of two available response options. Both options strike the same target: the unit that launched the first strike. All nuclear options carry the same low-yield warhead, comparable in yield to the weapon Russia detonated at Redzikowo; conventional options produce equivalent destructive effects, and casualties are constant across all options. All options are equally available, reliable, and expected to destroy the target.</p>
+      <p><em>Please rate each option, then select the option you consider less escalatory. Once you make your pick, the next pair of options appears — there are five rounds in total. All parts of this question are required.</em> <span class="req">*</span></p>
       <p><em>Note: We are in a future date where all response options are developed.</em></p>
     </div>
-    <div class="mx-wrap">
-      <table class="mx">
-        <tr><th></th><th class="colh">Launched from U.S. soil</th><th class="colh">Launched from U.S. allied soil</th><th class="colh">Launched from sea</th></tr>
-        <tr><th class="rowh">Nuclear — Ballistic Hypersonic Glide Vehicle</th>
-          <td><button class="cell" data-opt="A">Option A</button></td>
-          <td><button class="cell" data-opt="B">Option B</button></td>
-          <td><button class="cell" data-opt="C">Option C</button></td></tr>
-        <tr><th class="rowh">Nuclear — Cruise Missile</th>
-          <td><button class="cell" data-opt="D">Option D</button></td>
-          <td><button class="cell" data-opt="E">Option E</button></td>
-          <td><button class="cell" data-opt="F">Option F</button></td></tr>
-        <tr><th class="rowh">Precision Conventional Missile</th>
-          <td><button class="cell" data-opt="G">Option G</button></td>
-          <td><button class="cell" data-opt="H">Option H</button></td>
-          <td><button class="cell" data-opt="I">Option I</button></td></tr>
-      </table>
+    <div class="duel" id="duelWrap"></div>
+    <div class="pairnav">
+      <button type="button" class="prevpair hidden" id="prevPair">← Previous pair</button>
+      <span class="hintline" id="roundHint"></span>
+      <button type="button" class="prevpair hidden" id="nextPair">Next pair →</button>
     </div>
-    <input type="hidden" id="matrixVal" data-req>
+    <input type="hidden" id="gate-conjoint" data-req>
+    <div class="nav">
+      <button class="btn btn-ghost" id="conjointBack">← Back</button>
+      <button class="btn btn-primary hidden" id="conjointNext" disabled>Continue →</button>
+    </div>
+  </section>
+
+  <!-- ================ BLOCK U · EXPLAIN CHOICES (own page) ================ -->
+  <section class="page" id="conjoint-explain" data-step="Explaining Your Choices">
+    <p class="kicker">Explaining Your Choices</p>
     <div class="field">
-      <label class="q">Please explain why the response option you chose is the least escalatory. <span class="req">*</span></label>
-      <textarea data-ans="explain_choice" data-req placeholder="Type your response here…"></textarea>
+      <label class="q">Please explain how you decided between options - what attributes mattered most and why? <span class="req">*</span></label>
+      <textarea data-ans="conjoint_explain" data-req placeholder="Type your response here…"></textarea>
     </div>
     <div class="nav">
       <button class="btn btn-ghost" data-prev>← Back</button>
@@ -284,56 +318,20 @@
     </div>
   </section>
 
-  <!-- ================ PAGE 3 · RANKING ================ -->
-  <section class="page" data-step="Ranking">
-    <p class="kicker">Ranking the Options</p>
+  <!-- ================ BLOCK U · NON-MILITARY OPTION ================ -->
+  <section class="page" id="nonmil" data-step="One More Option">
+    <p class="kicker">One More Option</p>
     <div class="bodytext">
-      <p><strong>Ranking</strong><br>
-      The US President has asked you to rank the nine response options from most escalatory to least escalatory. <span class="req">*</span></p>
-      <p><em>Reminder: yield, target, casualties, and effectiveness are held constant.</em></p>
-      <p><strong>Instructions</strong><br>
-      Drag each response option from the box on the left into a slot on the right. You can reorder at any time by dragging, or with the ↑ ↓ buttons. All nine options must be placed before you can continue.</p>
+      <p>In addition to the military response options you have just seen, the US President also retains a non-military option, described below.</p>
     </div>
-    <details class="opt-table">
-      <summary>View the response option table</summary>
-      <table class="ot-grid">
-        <tr><th></th><th>Launched from U.S. soil</th><th>Launched from U.S. allied soil</th><th>Launched from sea</th></tr>
-        <tr><td>Nuclear — Ballistic Hypersonic Glide Vehicle</td><td>Option A</td><td>Option B</td><td>Option C</td></tr>
-        <tr><td>Nuclear — Cruise Missile</td><td>Option D</td><td>Option E</td><td>Option F</td></tr>
-        <tr><td>Precision Conventional Missile</td><td>Option G</td><td>Option H</td><td>Option I</td></tr>
-      </table>
-    </details>
-    <div class="rank-card">
-      <div class="board">
-        <section>
-          <p class="panel-title">Response Options</p>
-          <ul id="pool" class="pool-list"></ul>
-        </section>
-        <section>
-          <p class="panel-title">Your Ranking</p>
-          <div class="rank-cap top">Most Escalatory</div>
-          <div class="slots" id="slots"></div>
-          <div class="rank-cap bottom">Least Escalatory</div>
-        </section>
-      </div>
-    </div>
-    <div class="nav">
-      <button class="btn btn-ghost" data-prev>← Back</button>
-      <div class="hintline"><span id="rankCount">0</span> of 9 placed</div>
-      <button class="btn btn-primary" data-next id="rankNext" disabled>Continue →</button>
-    </div>
-  </section>
-
-  <!-- ================ PAGE 4 · RANKING FOLLOW-UPS ================ -->
-  <section class="page" data-step="Your Reasoning">
-    <p class="kicker">Your Reasoning</p>
-    <div class="field">
-      <label class="q">Please explain your ranking. How did you think about conventional versus nuclear and hypersonic versus cruise attributes? <span class="req">*</span></label>
-      <textarea data-ans="ranking_explanation" data-req placeholder="Type your response here…"></textarea>
+    <div class="strike-card">
+      <div class="prof-title">No Military Response</div>
+      <p style="margin:6px 0 2px;">The United States conducts no military strike. Instead, it issues a public statement condemning Russia's strike and imposes additional economic sanctions on Russia.</p>
     </div>
     <div class="field">
-      <label class="q">Are there any characteristics of theater nuclear weapons that are not measured in this survey that you think should be? If so, please explain why you believe it would be important to <span style="white-space:nowrap">measure. <span class="req">*</span></span></label>
-      <textarea data-ans="unmeasured_characteristics" data-req placeholder="Type your response here…"></textarea>
+      <label class="q">Please evaluate how escalatory this response would be. <span class="req">*</span></label>
+      <div id="nonmilScaleWrap"></div>
+      <input type="hidden" id="gate-nonmil" data-req>
     </div>
     <div class="nav">
       <button class="btn btn-ghost" data-prev>← Back</button>
@@ -341,20 +339,17 @@
     </div>
   </section>
 
-  <!-- ================ PAGE 5 · ABOUT YOU ================ -->
-  <section class="page" data-step="About You">
-    <p class="kicker">About You</p>
+  <!-- ================ VIGNETTE CHECK ================ -->
+  <section class="page" id="manip" data-step="Quick Check">
+    <p class="kicker">Quick Check</p>
     <div class="field">
-      <label class="q">What is your primary affiliation? <span class="req">*</span></label>
-      <select id="affiliation" data-req>
+      <label class="q">Earlier in the survey, you read a vignette describing Russia's strike on Redzikowo Missile Defense Base. Where was Russia's strike launched from? <span class="req">*</span></label>
+      <select id="manipSel" data-req>
         <option value="">Select one…</option>
-        <option>Government/Military</option>
-        <option>Academia</option>
-        <option>Government Contracting</option>
-        <option>Think Tank</option>
-        <option>Advocacy</option>
-        <option>Legislative Affairs/Staffing</option>
-        <option>Other</option>
+        <option>Mainland Russian soil</option>
+        <option>Belarusian soil (Russian ally)</option>
+        <option>At sea (Baltic Sea)</option>
+        <option>I don't recall</option>
       </select>
     </div>
     <div class="nav">
@@ -363,16 +358,99 @@
     </div>
   </section>
 
-  <!-- ================ PAGE 6 · COMMENTS + INTERVIEW ================ -->
-  <section class="page" data-step="Final Questions">
+  <!-- ================ ABOUT YOU ================ -->
+  <section class="page" id="about" data-step="About You">
+    <p class="kicker">About You</p>
+    <div class="field">
+      <label class="q">What is your primary affiliation? <span class="req">*</span></label>
+      <select id="affiliation" data-req>
+        <option value="">Select one…</option>
+        <option>Government (military, intelligence community, contracting)</option>
+        <option>Non-government (civilian, advocacy, academia, think tank, legislative/staffing)</option>
+      </select>
+    </div>
+    <div class="field">
+      <label class="q">Do you have military experience? <span class="req">*</span></label>
+      <select id="milExp" data-req>
+        <option value="">Select one…</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+    </div>
+
+    <p class="kicker" style="margin-top:38px;">Demographic Information</p>
+    <div class="field">
+      <label class="q">Gender <span class="req">*</span></label>
+      <select id="demoGender" class="demo-sel" data-req>
+        <option value="">Select one…</option>
+        <option>Female</option>
+        <option>Male</option>
+        <option>Nonbinary</option>
+        <option>Prefer not to say</option>
+      </select>
+    </div>
+    <div class="field">
+      <label class="q">Age <span class="req">*</span></label>
+      <select id="demoAge" class="demo-sel" data-req>
+        <option value="">Select one…</option>
+        <option>Under 25</option>
+        <option>25–29</option>
+        <option>30–34</option>
+        <option>35–39</option>
+        <option>40–44</option>
+        <option>45 or older</option>
+        <option>Prefer not to say</option>
+      </select>
+    </div>
+    <div class="field">
+      <label class="q">Race <span class="req">*</span></label>
+      <select id="demoRace" class="demo-sel" data-req>
+        <option value="">Select one…</option>
+        <option>American Indian or Alaska Native</option>
+        <option>Asian</option>
+        <option>Black or African American</option>
+        <option>Hispanic or Latino</option>
+        <option>Middle Eastern or North African</option>
+        <option>Native Hawaiian or Pacific Islander</option>
+        <option>White</option>
+        <option>Two or more races</option>
+        <option>Prefer not to say</option>
+      </select>
+    </div>
+    <div class="field">
+      <label class="q">Highest level of education <span class="req">*</span></label>
+      <select id="demoEdu" class="demo-sel" data-req>
+        <option value="">Select one…</option>
+        <option>High school diploma or equivalent</option>
+        <option>Some college, no degree</option>
+        <option>Associate degree</option>
+        <option>Bachelor's degree</option>
+        <option>Master's degree</option>
+        <option>Doctoral or professional degree (PhD, JD, MD)</option>
+        <option>Prefer not to say</option>
+      </select>
+    </div>
+    <div class="nav">
+      <button class="btn btn-ghost" data-prev>← Back</button>
+      <button class="btn btn-primary" data-next>Continue →</button>
+    </div>
+  </section>
+
+  <!-- ================ FINAL QUESTIONS ================ -->
+  <section class="page" id="final" data-step="Final Questions">
     <p class="kicker">Final Questions</p>
+    <div class="field">
+      <label class="q">Future Research <span class="req">*</span></label>
+      <p class="sub"><em>Are there any attributes of theater nuclear weapons that are not measured in this survey that you think should be? If so, please explain why you believe it would be important to measure.</em></p>
+      <textarea data-ans="unmeasured_characteristics" data-req placeholder="Type your response here…"></textarea>
+    </div>
     <div class="field">
       <label class="q">Comments <span class="req">*</span></label>
       <p class="sub"><em>If you want to share any insights about your thought processes and/or how you approached the survey questions, please write your comments here.</em></p>
       <textarea data-ans="comments" data-req placeholder="Type your response here…"></textarea>
     </div>
     <div class="field">
-      <label class="q">If you are open to being contacted in the future to participate in a short interview about your perspectives on characteristics of theater nuclear forces, please click the link and fill out the separate Google Form.</label>
+      <label class="q">If you are open to being contacted in the future to participate in a short interview about your perspectives on attributes of theater nuclear forces, please click the link and fill out the separate Google Form.</label>
       <p class="sub"><em>This question is confidential and will not be shared in the study.</em></p>
       <a class="linkbtn" href="https://docs.google.com/forms/d/e/1FAIpQLSc7jWJfCkeFf3VJvLtWK-U97FsnaDhfp13S-fnVcofKx6gwxg/viewform?usp=publish-editor" target="_blank" rel="noopener">Open the Google Form ↗</a>
     </div>
@@ -383,15 +461,15 @@
     </div>
   </section>
 
-  <!-- ================ PAGE 7 · THANK YOU ================ -->
-  <section class="page" data-step="Complete">
+  <!-- ================ THANK YOU ================ -->
+  <section class="page" id="thanks" data-step="Complete">
     <div class="fin-mark">✓</div>
     <p class="thanks">Thank you very much for your time and thoughtful consideration of my survey.</p>
   </section>
 
   <div class="foot">
     <span>Master's Capstone · The Fletcher School of Law and Diplomacy, Tufts University</span>
-    <span>Talia.Wilcox@tufts.edu · v13</span>
+    <span>Talia.Wilcox@tufts.edu · v18</span>
   </div>
   <div class="logo-row"><svg version="1.0" xmlns="http://www.w3.org/2000/svg"
   height="74" role="img" aria-label="" viewBox="0 0 2207.000000 3018.000000"
@@ -1214,174 +1292,316 @@ m-1330 -60 c9 -12 18 -53 48 -218 7 -42 13 -149 13 -246 1 -94 5 -184 10 -200
 </div>
 
 <script>
-  const OPTIONS = [
-    { id: "A", text: "Nuclear ballistic hypersonic glide vehicle launched from U.S. soil" },
-    { id: "B", text: "Nuclear ballistic hypersonic glide vehicle launched from U.S. allied soil" },
-    { id: "C", text: "Nuclear ballistic hypersonic glide vehicle launched from sea" },
-    { id: "D", text: "Nuclear cruise missile launched from U.S. soil" },
-    { id: "E", text: "Nuclear cruise missile launched from U.S. allied soil" },
-    { id: "F", text: "Nuclear cruise missile launched from sea" },
-    { id: "G", text: "Precision conventional missile launched from U.S. soil" },
-    { id: "H", text: "Precision conventional missile launched from U.S. allied soil" },
-    { id: "I", text: "Precision conventional missile launched from sea" }
+  /* ================================================================
+     EXPERIMENTAL DESIGN — attributes, levels, realism constraints
+     ================================================================ */
+  const VEHICLES  = ["Ballistic missile", "Cruise missile", "Hypersonic glide vehicle"];
+  const PLATFORMS = ["Dual-capable aircraft", "Submarine", "Ground launcher"];
+  const WARHEADS  = ["Low-yield nuclear", "Conventional"];
+  const US_LOCS   = ["US soil", "US allied soil", "At sea"];
+  const RU_LOCS   = ["Mainland Russian soil", "Belarusian soil (Russian ally)", "At sea (Baltic Sea)"];
+  const RU_SEA = "At sea (Baltic Sea)", US_SEA = "At sea";
+
+  function pick(a) { return a[Math.floor(Math.random() * a.length)]; }
+  // Realism constraints — a profile that violates any rule is redrawn.
+  function usAllowed(p) {
+    if (p.platform === "Submarine" && p.location !== US_SEA) return false;        // subs launch at sea
+    if (p.platform === "Ground launcher" && p.location === US_SEA) return false;  // no ground launch at sea
+    if (p.vehicle === "Cruise missile" && p.location === "US soil") return false; // cruise range can't reach from US soil
+    return true;
+  }
+  function ruAllowed(p) {
+    if (p.platform === "Submarine" && p.location !== RU_SEA) return false;
+    if (p.platform === "Ground launcher" && p.location === RU_SEA) return false;
+    return true;
+  }
+  function dealUS() {
+    let p;
+    do { p = { warhead: pick(WARHEADS), vehicle: pick(VEHICLES), platform: pick(PLATFORMS), location: pick(US_LOCS) }; }
+    while (!usAllowed(p));
+    return p;
+  }
+  // the vignette's strike: always low-yield nuclear (the story requires it) — warhead added at render
+  function dealRUStrike() {
+    let p;
+    do { p = { vehicle: pick(VEHICLES), platform: pick(PLATFORMS), location: pick(RU_LOCS) }; }
+    while (!ruAllowed(p));
+    return p;
+  }
+  // Russia conjoint cards: full mirror of US cards, warhead varies
+  function dealRUCard() {
+    let p;
+    do { p = { warhead: pick(WARHEADS), vehicle: pick(VEHICLES), platform: pick(PLATFORMS), location: pick(RU_LOCS) }; }
+    while (!ruAllowed(p));
+    return p;
+  }
+  function sameProfile(a, b) { return JSON.stringify(a) === JSON.stringify(b); }
+  function makeDesign() {
+    const rus = dealRUStrike();
+    const usRounds = [];
+    while (usRounds.length < 5) {
+      const a = dealUS(), b = dealUS();
+      if (!sameProfile(a, b)) usRounds.push({ opt1: a, opt2: b });
+    }
+    const ruRounds = [];
+    while (ruRounds.length < 5) {
+      const a = dealRUCard(), b = dealRUCard();
+      if (!sameProfile(a, b)) ruRounds.push({ opt1: a, opt2: b });
+    }
+    return {
+      order: Math.random() < 0.5 ? "russia_first" : "us_first",
+      rusStrike: rus, usRounds: usRounds, ruRounds: ruRounds
+    };
+  }
+
+  const SCALE = [
+    [1, "Not at all escalatory"], [2, "Slightly escalatory"], [3, "Moderately escalatory"],
+    [4, "Very escalatory"], [5, "Extremely escalatory"]
   ];
-  const answers = { least_escalatory_choice: null, ranking: [], open_ends: {}, background: {} };
+
+  const answers = {
+    scales: {},
+    choices: { us: [null, null, null, null, null], ru: [null, null, null, null, null] },
+    manip_answer: null, open_ends: {}, background: {}
+  };
 
   /* ---------- backend + session ---------- */
-  const ENDPOINT = "https://script.google.com/macros/s/AKfycbyxx9iHuRl540PKWWW9LJ_bpPhMGx9SrrSLBGo-TBE9GD1iv9wJBeZ8akPY_eEwFnfO/exec";
-  const TOKEN = new URLSearchParams(location.search).get("t") || "";
+  const ENDPOINT = "https://script.google.com/macros/s/AKfycbz1I3Ch8Oq_YgjA9fjLymvVr9WHVZWSPAtz4atMoc8KPTOgQ8N6Fa4AkYPQ2os_XweZIg/exec";
   const START = Date.now();
-  const KEY = "capstone_survey_" + (TOKEN || "anon");
+  const KEY = "capstone_survey2_anon";
   let submitting = false;
   function sget()  { try { return JSON.parse(localStorage.getItem(KEY) || "null"); } catch (e) { return null; } }
-  function sset()  { try { localStorage.setItem(KEY, JSON.stringify(Object.assign({}, answers, { page: current }))); } catch (e) {} }
+  function sset()  { try { localStorage.setItem(KEY, JSON.stringify({ design: design, answers: answers, page: seqPos })); } catch (e) {} }
   function sclear(){ try { localStorage.removeItem(KEY); } catch (e) {} }
   const SAVED_AT_LOAD = sget();   // capture before initialization writes anything
 
+  /* ---------- the dealt design: restore it, or deal + save it ---------- */
+  function validDesign(d) {
+    return d && d.order && d.rusStrike &&
+           Array.isArray(d.usRounds) && d.usRounds.length === 5 &&
+           Array.isArray(d.ruRounds) && d.ruRounds.length === 5;
+  }
+  const design = (SAVED_AT_LOAD && validDesign(SAVED_AT_LOAD.design)) ? SAVED_AT_LOAD.design : makeDesign();
+
+  /* ---------- render dynamic content from the design ---------- */
+  function el(id) { return document.getElementById(id); }
+  function profHTML(p, title) {
+    const rows = [];
+    if (p.warhead) rows.push(["Warhead", p.warhead]);
+    rows.push(["Delivery vehicle", p.vehicle], ["Launch platform", p.platform], ["Launched from", p.location]);
+    return (title ? '<div class="prof-title">' + title + '</div>' : '') +
+      rows.map(r => '<div class="prof-row"><span class="pk">' + r[0] + '</span><span class="pv">' + r[1] + '</span></div>').join("");
+  }
+  function scaleHTML(name) {
+    return '<div class="scale" data-scale="' + name + '">' +
+      SCALE.map(s => '<button type="button" class="scale-btn" data-val="' + s[0] + '"><span class="num">' + s[0] + '</span><span class="lab">' + s[1] + '</span></button>').join("") +
+      '</div>';
+  }
+  const rusProf = Object.assign({ warhead: "Low-yield nuclear" }, design.rusStrike);
+  el("rusProfileScenario").innerHTML = profHTML(rusProf, "Russia's Strike");
+  el("nonmilScaleWrap").innerHTML = scaleHTML("nonmil");
+
+  /* ---------- two mirrored conjoints: five rounds cycling on one page ---------- */
+  function paintScale(name) {
+    const wrap = document.querySelector('.scale[data-scale="' + name + '"]');
+    if (!wrap) return;
+    [...wrap.querySelectorAll(".scale-btn")].forEach(b =>
+      b.classList.toggle("sel", String(answers.scales[name]) === b.dataset.val));
+  }
+  function paintChoice(key, i) {
+    [...document.querySelectorAll('.pickbtn[data-conjoint="' + key + '"][data-round="' + i + '"]')].forEach(b =>
+      b.classList.toggle("sel", answers.choices[key][i] === b.dataset.choice));
+  }
+  function setupConjoint(cfg) {
+    const st = { current: 0 };
+    const sName = (i, n) => cfg.key + "_r" + i + "o" + n;
+    const complete = i => !!(answers.scales[sName(i, 1)] && answers.scales[sName(i, 2)] && answers.choices[cfg.key][i]);
+    function render(i, animate) {
+      const wrap = el(cfg.wrap);
+      const doRender = () => {
+        st.current = i;
+        el(cfg.num).textContent = i + 1;
+        const r = cfg.rounds[i];
+        wrap.innerHTML = [1, 2].map(n =>
+          '<div class="duel-col">' +
+            '<div class="opt-head">Option ' + n + '</div>' +
+            '<div class="prof">' + profHTML(n === 1 ? r.opt1 : r.opt2) + '</div>' +
+            '<div class="q-mini">How escalatory would this option be?</div>' +
+            scaleHTML(sName(i, n)) +
+            '<button type="button" class="pickbtn" data-conjoint="' + cfg.key + '" data-round="' + i + '" data-choice="Option ' + n + '">This is the less escalatory option</button>' +
+          '</div>').join("");
+        if (animate) {
+          const cols = wrap.querySelectorAll(".duel-col");
+          cols[0].classList.add("enter-l");
+          cols[1].classList.add("enter-r");
+        }
+        paintScale(sName(i, 1)); paintScale(sName(i, 2)); paintChoice(cfg.key, i);
+        el(cfg.prev).classList.toggle("hidden", i === 0);
+        nav();
+      };
+      if (animate && wrap.children.length === 2) {
+        wrap.children[0].classList.add("exit-l");
+        wrap.children[1].classList.add("exit-r");
+        setTimeout(doRender, 270);
+      } else {
+        doRender();
+      }
+    }
+    function nav() {
+      const done = [0, 1, 2, 3, 4].filter(complete).length;
+      const allDone = done === 5;
+      el(cfg.hint).textContent = done + " of 5 rounds complete";
+      el(cfg.nextBtn).classList.toggle("hidden", !allDone);
+      el(cfg.nextBtn).disabled = !allDone;
+      el(cfg.nextLink).classList.toggle("hidden", !(complete(st.current) && st.current < 4));
+    }
+    function enter() {
+      let i = [0, 1, 2, 3, 4].find(k => !complete(k));
+      if (i === undefined) i = 4;
+      render(i);
+    }
+    function advance() {
+      if (SEQ[seqPos] !== cfg.page || !complete(st.current)) return;
+      if (st.current < 4) render(st.current + 1, true);
+      else show(Math.min(seqPos + 1, SEQ.length - 1));
+    }
+    el(cfg.nextBtn).addEventListener("click", () => {
+      if ([0, 1, 2, 3, 4].every(complete)) show(Math.min(seqPos + 1, SEQ.length - 1));
+    });
+    el(cfg.nextLink).addEventListener("click", () => {
+      if (complete(st.current) && st.current < 4) render(st.current + 1, true);
+    });
+    el(cfg.prev).addEventListener("click", () => { if (st.current > 0) render(st.current - 1, true); });
+    el(cfg.back).addEventListener("click", () => {
+      if (st.current > 0) render(st.current - 1, true);
+      else show(Math.max(seqPos - 1, 0));
+    });
+    return { enter: enter, complete: complete, nav: nav, advance: advance, state: st };
+  }
+  const CONJ = {
+    us: setupConjoint({ key: "us", page: "conjoint",    rounds: design.usRounds, wrap: "duelWrap",   num: "roundNum",   hint: "roundHint",   prev: "prevPair",   nextLink: "nextPair",   back: "conjointBack",   nextBtn: "conjointNext" }),
+    ru: setupConjoint({ key: "ru", page: "ru-conjoint", rounds: design.ruRounds, wrap: "ruDuelWrap", num: "ruRoundNum", hint: "ruRoundHint", prev: "ruPrevPair", nextLink: "ruNextPair", back: "ruConjointBack", nextBtn: "ruConjointNext" })
+  };
+
+  /* ---------- page sequence (conjoint order randomized per respondent) ---------- */
+  const SEQ = ["intro", "scenario"]
+    .concat(design.order === "russia_first" ? ["ru-conjoint", "conjoint"] : ["conjoint", "ru-conjoint"])
+    .concat(["conjoint-explain", "nonmil", "manip", "about", "final", "thanks"]);
+  let seqPos = 0;
+
   /* ---------- paging + required gating ---------- */
-  const pages = [...document.querySelectorAll(".page")];
-  let current = 0;
+  function pageAt(i) { return el(SEQ[i]); }
+  function syncGates() {
+    el("gate-conjoint").value = [0, 1, 2, 3, 4].every(CONJ.us.complete) ? "ok" : "";
+    el("gate-ru-conjoint").value = [0, 1, 2, 3, 4].every(CONJ.ru.complete) ? "ok" : "";
+    el("gate-nonmil").value = answers.scales.nonmil ? "ok" : "";
+  }
   function gate() {
     if (submitting) return;   // after submission begins, stop saving and stop toggling buttons
+    syncGates();
     sset();
-    const pg = pages[current];
+    const pg = pageAt(seqPos);
     const reqs = [...pg.querySelectorAll("[data-req]")];
     if (!reqs.length) return;
-    const ok = reqs.every(el => el.value && el.value.trim() !== "");
+    const ok = reqs.every(e => e.value && e.value.trim() !== "");
     const btn = pg.querySelector("[data-next]") || pg.querySelector("#submitAll");
-    if (btn && btn.id !== "rankNext") btn.disabled = !ok;
+    if (btn) btn.disabled = !ok;
   }
   function show(i) {
-    pages[current].classList.remove("active");
-    current = i;
-    pages[current].classList.add("active");
-    document.getElementById("steplabel").textContent = pages[current].dataset.step;
-    document.getElementById("progress").style.width = (current / (pages.length - 1) * 100) + "%";
+    pageAt(seqPos).classList.remove("active");
+    seqPos = i;
+    pageAt(seqPos).classList.add("active");
+    el("steplabel").textContent = pageAt(seqPos).dataset.step;
+    el("progress").style.width = (seqPos / (SEQ.length - 1) * 100) + "%";
     window.scrollTo({ top: 0 });
+    if (SEQ[seqPos] === "conjoint") CONJ.us.enter();
+    if (SEQ[seqPos] === "ru-conjoint") CONJ.ru.enter();
     gate();
   }
   document.addEventListener("click", (e) => {
-    if (e.target.closest("[data-next]")) show(Math.min(current + 1, pages.length - 1));
-    if (e.target.closest("[data-prev]")) show(Math.max(current - 1, 0));
+    if (e.target.closest("[data-next]")) show(Math.min(seqPos + 1, SEQ.length - 1));
+    if (e.target.closest("[data-prev]")) show(Math.max(seqPos - 1, 0));
   });
   document.addEventListener("input", gate);
   document.addEventListener("change", gate);
 
   /* ---------- consent gate ---------- */
-  document.getElementById("consentBox").addEventListener("change", (e) => {
-    document.getElementById("beginBtn").disabled = !e.target.checked;
+  el("consentBox").addEventListener("change", (e) => {
+    el("beginBtn").disabled = !e.target.checked;
   });
 
-  /* ---------- matrix choice ---------- */
-  document.querySelectorAll(".mx .cell").forEach(c => c.addEventListener("click", () => {
-    document.querySelectorAll(".mx .cell").forEach(x => x.classList.remove("sel"));
-    c.classList.add("sel");
-    answers.least_escalatory_choice = c.dataset.opt;
-    document.getElementById("matrixVal").value = c.dataset.opt;
-    gate();
-  }));
-
-  /* ---------- ranking: pool + 9 slots ---------- */
-  const pool = document.getElementById("pool");
-  const slotsWrap = document.getElementById("slots");
-  const slots = [];
-  for (let i = 0; i < OPTIONS.length; i++) {
-    const s = document.createElement("div");
-    s.className = "slot";
-    slotsWrap.appendChild(s);
-    slots.push(s);
+  /* ---------- rating scales + choice buttons ---------- */
+  function maybeAutoAdvance(conj, roundIdx, wasComplete) {
+    // the action that just COMPLETED the current round advances to the next pair
+    if (roundIdx !== conj.state.current || wasComplete || !conj.complete(roundIdx)) return;
+    setTimeout(conj.advance, 300);
   }
-  const shuffled = [...OPTIONS];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  function makeCard(opt) {
-    const li = document.createElement("li");
-    li.className = "opt"; li.dataset.id = opt.id;
-    li.innerHTML = '<span class="grip">⠿</span>' +
-      '<span class="txt"><span class="letter">' + opt.id + '.</span>' + opt.text + '</span>' +
-      '<span class="ctrls"><button class="add" title="Add to ranking">＋</button>' +
-      '<button class="up hidden" title="Move up">↑</button><button class="down hidden" title="Move down">↓</button>' +
-      '<button class="remove hidden" title="Return to options">×</button></span>';
-    return li;
-  }
-  shuffled.forEach(o => pool.appendChild(makeCard(o)));
-  function cardIn(slot) { return slot.querySelector(".opt"); }
-  function refreshRank() {
-    slots.forEach((s, i) => {
-      const card = cardIn(s);
-      s.classList.toggle("filled", !!card);
-      if (card) {
-        card.querySelector(".grip").classList.remove("hidden");
-        card.querySelector(".add").classList.add("hidden");
-        card.querySelector(".up").classList.toggle("hidden", i === 0);
-        card.querySelector(".down").classList.toggle("hidden", i === slots.length - 1);
-        card.querySelector(".remove").classList.remove("hidden");
-      }
-    });
-    [...pool.querySelectorAll(".opt")].forEach(card => {
-      card.querySelector(".add").classList.remove("hidden");
-      card.querySelector(".up").classList.add("hidden");
-      card.querySelector(".down").classList.add("hidden");
-      card.querySelector(".remove").classList.add("hidden");
-    });
-    const filled = slots.filter(s => cardIn(s)).length;
-    document.getElementById("rankCount").textContent = filled;
-    document.getElementById("rankNext").disabled = filled !== OPTIONS.length;
-    answers.ranking = slots.map(s => cardIn(s) ? cardIn(s).dataset.id : null);
-    sset();
-  }
-  new Sortable(pool, { group: "options", animation: 160, onSort: refreshRank, onAdd: refreshRank });
-  slots.forEach(s => new Sortable(s, {
-    group: { name: "options", put: (to) => !to.el.querySelector(".opt") },
-    animation: 160,
-    onSort: refreshRank, onAdd: refreshRank, onRemove: refreshRank
-  }));
   document.addEventListener("click", (e) => {
-    const btn = e.target.closest(".opt button"); if (!btn) return;
-    const card = btn.closest(".opt");
-    if (btn.classList.contains("add")) {
-      const empty = slots.find(s => !cardIn(s));
-      if (empty) empty.appendChild(card);
+    const sb = e.target.closest(".scale-btn");
+    if (sb) {
+      const name = sb.closest(".scale").dataset.scale;
+      const m = /^(us|ru)_r(\d)o[12]$/.exec(name);
+      const was = m ? CONJ[m[1]].complete(Number(m[2])) : null;
+      answers.scales[name] = Number(sb.dataset.val);
+      paintScale(name);
+      gate();
+      if (m) { CONJ[m[1]].nav(); maybeAutoAdvance(CONJ[m[1]], Number(m[2]), was); }
+      return;
     }
-    if (btn.classList.contains("remove")) pool.appendChild(card);
-    if (btn.classList.contains("up") || btn.classList.contains("down")) {
-      const idx = slots.findIndex(s => s.contains(card));
-      const target = slots[idx + (btn.classList.contains("up") ? -1 : 1)];
-      if (target) {
-        const occupant = cardIn(target);
-        const home = slots[idx];
-        target.appendChild(card);
-        if (occupant) home.appendChild(occupant);
-      }
+    const pb = e.target.closest(".pickbtn");
+    if (pb) {
+      const key = pb.dataset.conjoint;
+      const i = Number(pb.dataset.round);
+      const was = CONJ[key].complete(i);
+      answers.choices[key][i] = pb.dataset.choice;
+      paintChoice(key, i);
+      gate();
+      CONJ[key].nav();
+      maybeAutoAdvance(CONJ[key], i, was);
     }
-    refreshRank();
   });
-  refreshRank();
+
+  /* ---------- vignette check ---------- */
+  el("manipSel").addEventListener("change", (e) => { answers.manip_answer = e.target.value; });
 
   /* ---------- open ends + background ---------- */
   document.querySelectorAll("textarea[data-ans]").forEach(t =>
     t.addEventListener("input", () => { answers.open_ends[t.dataset.ans] = t.value; }));
-  document.getElementById("affiliation").addEventListener("change", (e) => {
+  el("affiliation").addEventListener("change", (e) => {
     answers.background.primary_affiliation = e.target.value;
+  });
+  const DEMOS = [["milExp", "military_experience"], ["demoGender", "gender"], ["demoAge", "age"], ["demoRace", "race"], ["demoEdu", "education"]];
+  DEMOS.forEach(([id, key]) => {
+    el(id).addEventListener("change", (e) => { answers.background[key] = e.target.value; });
   });
 
   /* ---------- submit ---------- */
-  document.getElementById("submitAll").addEventListener("click", async () => {
+  function roundsPayload(key, rounds) {
+    return rounds.map((r, i) => ({
+      opt1: r.opt1, opt2: r.opt2,
+      opt1_rating: answers.scales[key + "_r" + i + "o1"] || "",
+      opt2_rating: answers.scales[key + "_r" + i + "o2"] || "",
+      choice: answers.choices[key][i] || ""
+    }));
+  }
+  el("submitAll").addEventListener("click", async () => {
     if (submitting) return;
     submitting = true;
-    const btn = document.getElementById("submitAll");
-    const status = document.getElementById("submitStatus");
+    const btn = el("submitAll");
+    const status = el("submitStatus");
     btn.disabled = true;
     btn.textContent = "Submitting…";
     status.textContent = "";
     const payload = {
-      token: TOKEN,
-      honeypot: !!document.getElementById("hp").value,
+      honeypot: !!el("hp").value,
       completion_seconds: Math.round((Date.now() - START) / 1000),
-      least_escalatory_choice: answers.least_escalatory_choice,
-      ranking: answers.ranking,
+      section_order: design.order,
+      rus_strike: design.rusStrike,
+      us_rounds: roundsPayload("us", design.usRounds),
+      ru_rounds: roundsPayload("ru", design.ruRounds),
+      nonmilitary_rating: answers.scales.nonmil || "",
+      manip_answer: answers.manip_answer || "",
+      manip_correct: answers.manip_answer === design.rusStrike.location,
       open_ends: answers.open_ends,
       background: answers.background
     };
@@ -1390,7 +1610,7 @@ m-1330 -60 c9 -12 18 -53 48 -218 7 -42 13 -149 13 -246 1 -94 5 -184 10 -200
       const out = await res.json();
       if (out.status === "ok" || out.status === "duplicate") {
         sclear();
-        show(pages.length - 1);
+        show(SEQ.length - 1);
         return;
       }
       throw new Error(out.message || "Server error");
@@ -1405,34 +1625,27 @@ m-1330 -60 c9 -12 18 -53 48 -218 7 -42 13 -149 13 -246 1 -94 5 -184 10 -200
   /* ---------- resume a saved session ---------- */
   (function restore() {
     const saved = SAVED_AT_LOAD;
-    if (!saved) return;
-    if (saved.open_ends) {
-      answers.open_ends = saved.open_ends;
+    if (!saved || !saved.answers) { sset(); return; }
+    const a = saved.answers;
+    if (a.scales) { answers.scales = a.scales; Object.keys(a.scales).forEach(paintScale); }
+    if (a.choices && Array.isArray(a.choices.us) && Array.isArray(a.choices.ru)) {
+      answers.choices = a.choices;
+      for (let i = 0; i < 5; i++) { paintChoice("us", i); paintChoice("ru", i); }
+    }
+    if (a.manip_answer) { answers.manip_answer = a.manip_answer; el("manipSel").value = a.manip_answer; }
+    if (a.open_ends) {
+      answers.open_ends = a.open_ends;
       document.querySelectorAll("textarea[data-ans]").forEach(t => {
-        if (saved.open_ends[t.dataset.ans]) t.value = saved.open_ends[t.dataset.ans];
+        if (a.open_ends[t.dataset.ans]) t.value = a.open_ends[t.dataset.ans];
       });
     }
-    if (saved.background && saved.background.primary_affiliation) {
-      answers.background = saved.background;
-      document.getElementById("affiliation").value = saved.background.primary_affiliation;
+    if (a.background) {
+      answers.background = a.background;
+      if (a.background.primary_affiliation) el("affiliation").value = a.background.primary_affiliation;
+      DEMOS.forEach(([id, key]) => { if (a.background[key]) el(id).value = a.background[key]; });
     }
-    if (saved.least_escalatory_choice) {
-      const c = document.querySelector('.mx .cell[data-opt="' + saved.least_escalatory_choice + '"]');
-      if (c) {
-        c.classList.add("sel");
-        answers.least_escalatory_choice = saved.least_escalatory_choice;
-        document.getElementById("matrixVal").value = saved.least_escalatory_choice;
-      }
-    }
-    if (Array.isArray(saved.ranking)) {
-      saved.ranking.forEach((id, i) => {
-        if (!id) return;
-        const card = pool.querySelector('.opt[data-id="' + id + '"]');
-        if (card && !cardIn(slots[i])) slots[i].appendChild(card);
-      });
-      refreshRank();
-    }
-    if (typeof saved.page === "number" && saved.page > 0) show(Math.min(saved.page, pages.length - 2));
+    if (typeof saved.page === "number" && saved.page > 0) show(Math.min(saved.page, SEQ.length - 2));
+    else gate();
   })();
 </script>
 </body>
