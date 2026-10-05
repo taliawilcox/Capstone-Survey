@@ -174,6 +174,15 @@
   }
   .linkbtn:hover { background: var(--accent-wash); }
 
+  .mech-row { display: flex; gap: 12px; align-items: flex-start; margin: 0 0 14px; max-width: 720px; }
+  .mech-row input { width: 18px; height: 18px; margin-top: 3px; accent-color: var(--accent); flex: none; cursor: pointer; }
+  .mech-row label { font-size: 15.5px; cursor: pointer; line-height: 1.45; }
+  .mech-other-input {
+    width: 100%; max-width: 560px; margin: 2px 0 10px 30px; padding: 10px 12px;
+    border: 1px solid var(--line-strong); border-radius: 8px;
+    font-family: var(--sans); font-size: 14.5px; color: var(--ink); background: var(--card);
+  }
+  .mech-other-input:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
   .consent-row { display: flex; gap: 12px; align-items: flex-start; margin: 28px 0 6px; max-width: 720px; }
   .consent-row input { width: 18px; height: 18px; margin-top: 3px; accent-color: var(--accent); flex: none; cursor: pointer; }
   .consent-row label { font-size: 15.5px; cursor: pointer; }
@@ -314,6 +323,25 @@
     <div class="field">
       <label class="q">Please explain how you decided between options - what attributes mattered most and why? If your reasoning differed between the US and Russian strike options, please describe how. <span class="req">*</span></label>
       <textarea data-ans="conjoint_explain" data-req placeholder="Type your response here…"></textarea>
+    </div>
+    <div class="nav">
+      <button class="btn btn-ghost" data-prev>← Back</button>
+      <button class="btn btn-primary" data-next>Continue →</button>
+    </div>
+  </section>
+
+  <!-- ================ ESCALATION MECHANISMS ================ -->
+  <section class="page" id="mechanisms" data-step="Escalation Mechanisms">
+    <p class="kicker">Escalation Mechanisms</p>
+    <div class="field">
+      <label class="q">Please reflect on the strike options you rated as more escalatory. Which of the following escalation mechanisms did you perceive to be at play? Select all that apply. <span class="req">*</span></label>
+      <div class="mech-row"><input type="checkbox" id="mech1" class="mech-box" data-mech="Sending a stronger, more committed message to the adversary"><label for="mech1">Sending a stronger, more committed message to the adversary</label></div>
+      <div class="mech-row"><input type="checkbox" id="mech2" class="mech-box" data-mech="Risk of being misread or misinterpreted, triggering escalation neither side intended"><label for="mech2">Risk of being misread or misinterpreted, triggering escalation neither side intended</label></div>
+      <div class="mech-row"><input type="checkbox" id="mech3" class="mech-box" data-mech="Risk of accident, technical failure, or loss of control"><label for="mech3">Risk of accident, technical failure, or loss of control</label></div>
+      <div class="mech-row"><input type="checkbox" id="mech4" class="mech-box" data-mech="Crossing an important threshold or norm (such as nuclear use)"><label for="mech4">Crossing an important threshold or norm (such as nuclear use)</label></div>
+      <div class="mech-row"><input type="checkbox" id="mechOther" class="mech-box" data-mech="Other"><label for="mechOther">Other (please briefly describe)</label></div>
+      <input type="text" id="mechOtherText" class="mech-other-input hidden" placeholder="Type your response here…" maxlength="300">
+      <input type="hidden" id="gate-mechanisms" data-req>
     </div>
     <div class="nav">
       <button class="btn btn-ghost" data-prev>← Back</button>
@@ -471,7 +499,7 @@
 
   <div class="foot">
     <span>Master's Capstone · The Fletcher School of Law and Diplomacy, Tufts University</span>
-    <span>Talia.Wilcox@tufts.edu · v21</span>
+    <span>Talia.Wilcox@tufts.edu · v22</span>
   </div>
   <div class="logo-row"><svg version="1.0" xmlns="http://www.w3.org/2000/svg"
   height="74" role="img" aria-label="" viewBox="0 0 2207.000000 3018.000000"
@@ -1364,7 +1392,8 @@ m-1330 -60 c9 -12 18 -53 48 -218 7 -42 13 -149 13 -246 1 -94 5 -184 10 -200
   const answers = {
     scales: {},
     choices: { us: [null, null, null, null, null], ru: [null, null, null, null, null] },
-    manip_answer: null, open_ends: {}, background: {}
+    manip_answer: null, open_ends: {}, background: {},
+    mechanisms: [], mechanisms_other: ""
   };
 
   /* ---------- backend + session ---------- */
@@ -1488,7 +1517,7 @@ m-1330 -60 c9 -12 18 -53 48 -218 7 -42 13 -149 13 -246 1 -94 5 -184 10 -200
   /* ---------- page sequence (conjoint order randomized per respondent) ---------- */
   const SEQ = ["intro", "scenario"]
     .concat(design.order === "russia_first" ? ["ru-conjoint", "conjoint"] : ["conjoint", "ru-conjoint"])
-    .concat(["conjoint-explain", "nonmil", "manip", "about", "final", "thanks"]);
+    .concat(["conjoint-explain", "mechanisms", "nonmil", "manip", "about", "final", "thanks"]);
   let seqPos = 0;
 
   /* ---------- paging + required gating ---------- */
@@ -1497,6 +1526,8 @@ m-1330 -60 c9 -12 18 -53 48 -218 7 -42 13 -149 13 -246 1 -94 5 -184 10 -200
     el("gate-conjoint").value = [0, 1, 2, 3, 4].every(CONJ.us.complete) ? "ok" : "";
     el("gate-ru-conjoint").value = [0, 1, 2, 3, 4].every(CONJ.ru.complete) ? "ok" : "";
     el("gate-nonmil").value = answers.scales.nonmil ? "ok" : "";
+    const mechOtherOK = !answers.mechanisms.includes("Other") || (answers.mechanisms_other || "").trim() !== "";
+    el("gate-mechanisms").value = (answers.mechanisms.length > 0 && mechOtherOK) ? "ok" : "";
   }
   function gate() {
     if (submitting) return;   // after submission begins, stop saving and stop toggling buttons
@@ -1526,6 +1557,27 @@ m-1330 -60 c9 -12 18 -53 48 -218 7 -42 13 -149 13 -246 1 -94 5 -184 10 -200
   });
   document.addEventListener("input", gate);
   document.addEventListener("change", gate);
+
+  /* ---------- escalation mechanisms ---------- */
+  function paintMechanisms() {
+    [...document.querySelectorAll(".mech-box")].forEach(b => {
+      b.checked = answers.mechanisms.includes(b.dataset.mech);
+    });
+    const otherOn = answers.mechanisms.includes("Other");
+    el("mechOtherText").classList.toggle("hidden", !otherOn);
+    el("mechOtherText").value = answers.mechanisms_other || "";
+  }
+  document.addEventListener("change", (e) => {
+    if (!e.target.classList || !e.target.classList.contains("mech-box")) return;
+    answers.mechanisms = [...document.querySelectorAll(".mech-box")].filter(b => b.checked).map(b => b.dataset.mech);
+    if (!answers.mechanisms.includes("Other")) answers.mechanisms_other = "";
+    paintMechanisms();
+    gate();
+  });
+  el("mechOtherText").addEventListener("input", (e) => {
+    answers.mechanisms_other = e.target.value;
+    gate();
+  });
 
   /* ---------- consent gate ---------- */
   el("consentBox").addEventListener("change", (e) => {
@@ -1604,6 +1656,8 @@ m-1330 -60 c9 -12 18 -53 48 -218 7 -42 13 -149 13 -246 1 -94 5 -184 10 -200
       nonmilitary_rating: answers.scales.nonmil || "",
       manip_answer: answers.manip_answer || "",
       manip_correct: answers.manip_answer === design.rusStrike.location,
+      escalation_mechanisms: answers.mechanisms,
+      escalation_mechanisms_other: (answers.mechanisms_other || "").trim(),
       open_ends: answers.open_ends,
       background: answers.background
     };
@@ -1635,6 +1689,11 @@ m-1330 -60 c9 -12 18 -53 48 -218 7 -42 13 -149 13 -246 1 -94 5 -184 10 -200
       for (let i = 0; i < 5; i++) { paintChoice("us", i); paintChoice("ru", i); }
     }
     if (a.manip_answer) { answers.manip_answer = a.manip_answer; el("manipSel").value = a.manip_answer; }
+    if (Array.isArray(a.mechanisms)) {
+      answers.mechanisms = a.mechanisms;
+      answers.mechanisms_other = a.mechanisms_other || "";
+      paintMechanisms();
+    }
     if (a.open_ends) {
       answers.open_ends = a.open_ends;
       document.querySelectorAll("textarea[data-ans]").forEach(t => {
